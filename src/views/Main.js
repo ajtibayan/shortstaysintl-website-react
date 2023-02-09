@@ -24,7 +24,7 @@ const Main = () => {
     };
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDFxzcbEf46JcOv7LYxHtR6dI9xxROT4OQ",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
     libraries: placesLibrary,
   });
 
