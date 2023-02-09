@@ -1,0 +1,51 @@
+.section-wrapper.section-marketed .heading-container {
+  margin-top: 3rem;
+}
+
+.marketed-title {
+  text-align: center;
+}
+
+.listing-websites-logos {
+  display: grid;
+  margin-top: 40px;
+  gap: 1rem;
+  grid-template-areas:
+    ". airbnb ."
+    ". vrbo .";
+  grid-auto-columns: 0.5fr 2fr 0.5fr;
+}
+
+.logo-airbnb {
+  grid-area: airbnb;
+}
+
+.logo-vrbo {
+  grid-area: vrbo;
+}
+
+.grid-logo img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 460px) {
+  /************* Marketed Styles *************/
+
+  .listing-websites-logos {
+    grid-template-areas: ". airbnb . vrbo .";
+    grid-auto-columns: 0.5fr 2.25fr 0.5fr 2.25fr 0.5fr;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /************* Marketed Styles *************/
+
+  .section-wrapper.section-marketed .heading-container {
+    margin-top: 5rem;
+  }
+
+  .listing-websites-logos {
+    grid-template-areas: ". airbnb . vrbo .";
+    grid-auto-columns: auto 250px 50px 250px auto;
+  }
+}

@@ -1,0 +1,242 @@
+.main {
+  background-color: blue;
+  background-image: url("../../public/images/bg/slider-2.jpg");
+  background-size: cover;
+  background-position: top center;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main_content-container {
+  min-height: 300px;
+  width: 100%;
+  justify-content: start;
+  padding: 0 15px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+}
+
+.main-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+}
+
+.main-form-container h1 {
+  display: block;
+  width: 100%;
+  margin: 20px 0 40px;
+  font-size: 2.4rem;
+  line-height: 2.5rem;
+}
+
+.main-form-container h3 {
+  margin-bottom: 35px;
+}
+
+.main-form-container_input-container {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  position: relative;
+}
+
+.main-form-container_location-input {
+  width: 85%;
+  position: relative;
+  text-align: left;
+}
+
+.main-form-container_location-submit {
+  width: 10%;
+  position: relative;
+  text-align: left;
+}
+
+.main-form-container.isDone {
+  display: none;
+}
+
+.main-form-container_location-input svg.fa-location-dot {
+  position: absolute;
+  height: 24px;
+  margin-left: 15px;
+  margin-top: 14px;
+  color: #343434;
+}
+
+.input-text {
+  width: 100%;
+  height: 52px;
+  padding: 0 15px 0 45px;
+  margin-bottom: 2px;
+  font-size: 1rem;
+  box-shadow: none;
+  background: #f0f3f6;
+  border: none;
+  border-radius: 4px 0px 0px 4px;
+  line-height: 50px;
+  color: #717580;
+}
+
+.location-submit {
+  position: relative;
+  border-radius: 0px 4px 4px 0px;
+  height: 52px;
+  width: 62px;
+  background-color: #ffde59;
+  color: #343434;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.location-submit:hover {
+  background-color: #ffcc00;
+}
+
+.main-form-container_location-submit svg.fa-arrow-right {
+  height: 22px;
+}
+
+.main-form-container2 {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+}
+
+.main-form-container2.showForm {
+  display: flex;
+}
+
+.back-arrow-container {
+  display: flex;
+}
+
+.back-arrow-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.back-arrow-container a svg.fa-arrow-left {
+  height: 22px;
+}
+
+.back-arrow-container_link {
+  display: flex;
+}
+
+.back-arrow-container_link span {
+  display: none;
+}
+
+.main-form-container2 h2 {
+  margin: 0 0 25px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.main-form-container2 h3 {
+  margin-bottom: 35px;
+}
+
+.user-text-field {
+  padding: 0 15px;
+}
+
+.main-form-container2_input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.userSubmit {
+  position: relative;
+  border-radius: 4px;
+  height: 52px;
+  width: 100%;
+  background-color: #ffde59;
+  color: #343434;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+@media only screen and (min-width: 800px) {
+}
+
+@media only screen and (min-width: 1025px) {
+  .main {
+    padding: 290px 40px 160px;
+  }
+
+  .main_content-container {
+    max-width: 1200px;
+    text-align: left;
+  }
+
+  .main-form-container h1 {
+    width: 80%;
+    margin: 0 0 50px;
+    font-size: 4.5rem;
+    line-height: 4.6rem;
+  }
+
+  .main-form-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+  }
+
+  .main-form-container_input-container {
+    width: 60%;
+  }
+
+  .main-form-container2 h2 {
+    margin: 30px 0 40px;
+    font-size: 4.25rem;
+    line-height: 4.75rem;
+  }
+
+  .back-arrow-container_link span {
+    display: inline-block;
+    margin-left: 8px;
+    font-weight: bold;
+  }
+
+  .main-form-container2_input-container {
+    display: grid;
+    grid-template: "first last email phone" 1fr "terms terms terms submit" 1fr / 1fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .main-form-container2_input-container .input-text {
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .userSubmit {
+    width: 100%;
+    grid-area: submit / submit / submit / submit;
+  }
+
+  .main-form-container2_input-container p {
+    grid-area: terms / terms / terms / terms;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .main-form-container h1 {
+    width: 70%;
+  }
+}

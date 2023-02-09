@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTwitter,
+  faSquareFacebook,
+  faLinkedin,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
+// Components and Styles
+import Home from "./views/Home";
+import About from "./views/About";
+import OurServices from "./views/OurServices";
+import TrainingAndCoaching from "./views/TrainingAndCoaching";
+import FAQs from "./views/FAQs";
+import Contact from "./views/Contact";
+import ErrorPage from "./views/ErrorPage";
+import "./App.css";
+
+library.add(fas, faTwitter, faSquareFacebook, faLinkedin, faInstagram);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/About" element={<About />} />
+      <Route path="/OurServices" element={<OurServices />} />
+      <Route path="/TrainingAndCoaching" element={<TrainingAndCoaching />} />
+      <Route path="/FAQs" element={<FAQs />} />
+      <Route path="/Contact" element={<Contact />} />
+      <Route path="/*" element={<ErrorPage />} />
+    </Routes>
   );
 }
 
