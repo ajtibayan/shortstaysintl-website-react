@@ -1,0 +1,91 @@
+.subBanner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 55px;
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.banner-overlay {
+  background-color: rgba(17, 22, 31, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.subBanner-wrapper {
+  position: relative;
+  z-index: 11;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.subBanner-container {
+  padding: 60px 0;
+}
+
+ul.breadcrumb {
+  margin: 5px 0 0;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  background: none;
+  list-style-type: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0;
+}
+
+ul.breadcrumb li {
+  float: left;
+  position: relative;
+  z-index: 11;
+  line-height: 1;
+  text-align: center;
+  padding: 0 10px;
+}
+
+ul.breadcrumb li:first-child {
+  padding-left: 0;
+}
+
+ul.breadcrumb li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+ul.breadcrumb li a:hover,
+ul.breadcrumb li a:focus {
+  text-decoration: underline;
+}
+
+ul.breadcrumb li:after {
+  content: "/";
+  position: absolute;
+  bottom: 0;
+  left: -2px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+ul.breadcrumb li:first-child:after {
+  content: "";
+}
+
+@media only screen and (min-width: 768px) {
+  .subBanner-container {
+    padding: 80px 0;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .subBanner-container {
+    padding: 100px 0;
+  }
+}

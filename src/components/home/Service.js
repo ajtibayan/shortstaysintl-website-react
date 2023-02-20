@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Service = ({
-  id,
+  _id,
   itemClass,
   image,
   serviceName,
@@ -10,7 +10,7 @@ const Service = ({
   linkLoc,
 }) => {
   return (
-    <div className={`${itemClass} grid-item`} key={id}>
+    <div className={`${itemClass} grid-item`} key={_id}>
       <div className="img-wrapper">
         <img src={image} />
       </div>

@@ -1,16 +1,18 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 // Components and Styles
 import MainNav from "../components/MainNav";
 import "./Contact.css";
-import Main from "./Main";
+import SubBanner from "../components/SubBanner";
 import Footer from "./Footer";
 
 const Contact = () => {
+  const location = useLocation();
   return (
     <>
       <MainNav />
-      <Main />
+      <SubBanner bannerUrl={location.pathname} />
       <div className="content-wrapper">
         <section className="section-wrapper">
           <h2>Contact Page</h2>

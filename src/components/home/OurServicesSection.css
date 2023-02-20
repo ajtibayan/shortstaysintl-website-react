@@ -57,15 +57,18 @@
 }
 
 .grid-item {
+  width: 100%;
   margin-bottom: 25px;
 }
 
 .img-wrapper {
+  width: 100%;
   text-align: center;
   margin-bottom: 0.5rem;
 }
 
 .img-wrapper img {
+  width: 35%;
   border-radius: 50%;
 }
 
@@ -92,5 +95,9 @@
 
   .heading-container {
     margin-top: 5rem;
+  }
+
+  .img-wrapper img {
+    width: 60%;
   }
 }

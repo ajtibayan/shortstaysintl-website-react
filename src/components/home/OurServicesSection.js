@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Components and Styles
 import Service from "./Service";
 import "./OurServicesSection.css";
 
 // Assets
-import { ourServices } from "../../data/OurServicesSection";
+// import { ourServices } from "../../data/OurServicesSection";
 
 const OurServicesSection = () => {
+  const [ourServicesContent, setOurServicesContent] = useState([]);
+
+  useEffect(() => {
+    const fetchOurServicesContent = async () => {
+      const response = await fetch("/api/homepage/ourServicesSection");
+      const json = await response.json();
+
+      if (response.ok) {
+        setOurServicesContent(json);
+      }
+    };
+
+    fetchOurServicesContent();
+  }, []);
   return (
     <section className="section-wrapper">
       <div className="heading-container">
@@ -18,8 +32,8 @@ const OurServicesSection = () => {
         </h4>
       </div>
       <div className="services-container">
-        {ourServices.map((service) => {
-          return <Service {...service} key={service.id} />;
+        {ourServicesContent.map((service) => {
+          return <Service {...service} key={service._id} />;
         })}
       </div>
     </section>

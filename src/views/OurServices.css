@@ -1,0 +1,138 @@
+.our-services {
+  width: 100%;
+}
+
+.ourServicesPg {
+  margin-top: 0;
+}
+
+.ourServicesPg h2 {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.our-services h3 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.our-services h4 {
+  font-size: 1.25rem;
+}
+
+.our-services p {
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.our-services_wrapper {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.services-grid {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "consulting"
+    "listing";
+  grid-template-columns: 1fr;
+}
+
+.service-item {
+  margin-bottom: 40px;
+}
+
+/* .consulting {
+  grid-area: consulting;
+}
+
+.listing {
+  grid-area: listing;
+} */
+
+.service-media {
+  text-align: center;
+}
+
+.service-media img {
+  width: 60%;
+  margin-bottom: 40px;
+  border-radius: 5px;
+}
+
+.service-description ul {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+.service-description ul li {
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.5rem;
+}
+
+@media only screen and (min-width: 1025px) {
+  .services-grid {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "media description";
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-media {
+    grid-area: media;
+    margin-bottom: 150px;
+  }
+
+  .service-description {
+    grid-area: description;
+    padding: 8rem;
+    color: #fff;
+    background-color: #4375f4;
+    border-bottom-left-radius: 100px;
+    z-index: 100;
+  }
+
+  .dt-desc ul.fa-ul {
+    margin-left: 28px;
+  }
+
+  .dt-desc ul.fa-ul li {
+    padding-left: 5px;
+  }
+
+  .sticky-img {
+    position: sticky;
+    width: 100%;
+    top: 100px;
+    margin: 0rem -6rem 0rem 6rem;
+  }
+
+  .sticky-img img {
+    display: block;
+    width: 70%;
+    padding-top: 100px;
+    filter: drop-shadow(15px 15px 4px #3333334d);
+  }
+
+  .sticky-img img.dtImg-consulting,
+  .sticky-img img.dtImg-listing,
+  .sticky-img img.dtImg-management,
+  .sticky-img img.dtImg-travel,
+  .sticky-img img.dtImg-financing {
+    position: absolute;
+    opacity: 0;
+    right: 7.75rem;
+    transition: all 0.6s ease-in-out;
+  }
+
+  .sticky-img img.dtImg-consulting.active,
+  .sticky-img img.dtImg-listing.active,
+  .sticky-img img.dtImg-management.active,
+  .sticky-img img.dtImg-travel.active,
+  .sticky-img img.dtImg-financing.active {
+    opacity: 1;
+  }
+}

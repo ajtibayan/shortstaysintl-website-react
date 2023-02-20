@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -6,17 +6,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./MobileNav.css";
 
 // Assets
-import { socialMedia, mainNav } from "../data/Navigation";
+// import { mainNav } from "../data/Navigation";
 
 const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
+  const [socialMedia, setSocialMedia] = useState([]);
+  const [mainNav, setMainNav] = useState([]);
+
+  useEffect(() => {
+    const fetchNavigationContent = async () => {
+      const response = await fetch("/api/navigation");
+      const json = await response.json();
+
+      if (response.ok) {
+        setSocialMedia(json[0].socialMedia);
+        setMainNav(json[1].mainNav);
+      }
+    };
+
+    fetchNavigationContent();
+  }, []);
   return (
     <div className="header-mobile">
       <div className="topbar-mobile">
         <div className="topbar-mobile--left">
           <ul className="topbar-mobile--social">
-            {socialMedia.map(({ id, hrefLink, faIcon }) => {
+            {socialMedia.map(({ hrefLink, faIcon, name }) => {
               return (
-                <li key={id}>
+                <li key={name}>
                   <a href={hrefLink}>
                     <FontAwesomeIcon icon={faIcon} />
                   </a>
@@ -57,9 +73,9 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
             </div>
             <div className="header-mobile-sidebar_menu-container">
               <ul className="mobile-main-menu">
-                {mainNav.map(({ id, linkTo, linkName }) => {
+                {mainNav.map(({ linkTo, linkName }) => {
                   return (
-                    <li key={id}>
+                    <li key={linkName}>
                       <Link to={linkTo}>{linkName}</Link>
                     </li>
                   );

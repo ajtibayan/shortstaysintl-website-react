@@ -1,0 +1,140 @@
+.aboutPg {
+  padding-top: 40px;
+}
+
+.aboutPg article {
+  margin-bottom: 50px;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.about_ssi,
+.about_our-story {
+  display: flex;
+  flex-direction: column;
+}
+
+.about_ssi img,
+.about_our-story img {
+  width: 590px;
+  max-width: 100%;
+  margin: 0 auto 25px;
+  border-radius: 5px;
+}
+
+.aboutPg h2 {
+  margin-bottom: 25px;
+}
+
+.about_our-mission h2 {
+  text-align: center;
+}
+
+.aboutPg p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2rem;
+  margin-bottom: 25px;
+  color: #333333;
+}
+
+.about_our-mission img.our-mission-img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 5px;
+}
+
+.about_our-values {
+  margin-top: 2rem;
+  padding: 0 15px;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "integrity"
+    "honesty"
+    "teamwork"
+    "positivity";
+  grid-template-columns: 1fr;
+}
+
+.value-integrity {
+  grid-area: integrity;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value-honesty {
+  grid-area: honesty;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value-teamwork {
+  grid-area: teamwork;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value-positivity {
+  grid-area: positivity;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about_our-values img {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.value-teamwork p {
+  align-self: start;
+}
+
+@media only screen and (min-width: 768px) {
+  .about_our-values {
+    grid-template-areas:
+      "integrity honesty"
+      "teamwork positivity";
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .leftImg {
+    float: left;
+  }
+
+  .rightImg {
+    float: right;
+  }
+
+  .about_ssi,
+  .about_our-story {
+    display: block;
+  }
+
+  .about_ssi img,
+  .about_our-story img {
+    width: 45%;
+    margin: 0 60px 25px 15px;
+  }
+
+  .about_our-values {
+    grid-template-areas: "integrity honesty teamwork positivity";
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .about_our-values img {
+    width: 90%;
+    margin-top: 30px;
+  }
+}

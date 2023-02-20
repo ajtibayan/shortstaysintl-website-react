@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -6,18 +6,38 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./DeskTopNav.css";
 
 // Assets
-import { socialMedia, mainNav } from "../data/Navigation";
+// import { socialMedia, mainNav } from "../data/Navigation";
 
 const DeskTopNav = ({ scrollTop, url }) => {
+  const [socialMedia, setSocialMedia] = useState([]);
+  const [mainNav, setMainNav] = useState([]);
+
+  useEffect(() => {
+    const fetchNavigationContent = async () => {
+      const response = await fetch("/api/navigation");
+      const json = await response.json();
+
+      if (response.ok) {
+        setSocialMedia(json[0].socialMedia);
+        setMainNav(json[1].mainNav);
+      }
+    };
+
+    fetchNavigationContent();
+  }, []);
   return (
-    <div className={`header-main ${scrollTop >= 40 ? "isFixed" : ""}`}>
+    <div
+      className={`header-main${scrollTop >= 40 ? " isFixed" : ""}${
+        url != "/" ? " subPg" : ""
+      }`}
+    >
       <div className="header-top">
         <div className="header-top_container">
           <div className="header-top_container--left">
             <ul className="header-top_container--social">
-              {socialMedia.map(({ id, hrefLink, faIcon, name }) => {
+              {socialMedia.map(({ hrefLink, faIcon, name }) => {
                 return (
-                  <li key={id}>
+                  <li key={name}>
                     <a href={hrefLink}>
                       <span className="header-social-icons">
                         <FontAwesomeIcon icon={faIcon} />
@@ -48,9 +68,12 @@ const DeskTopNav = ({ scrollTop, url }) => {
           </div>
           <div className="header-content_container--right">
             <ul className="header-content_container--main-menu">
-              {mainNav.map(({ id, linkTo, linkName }) => {
+              {mainNav.map(({ linkTo, linkName }) => {
                 return (
-                  <li className={url === linkTo ? "activePg" : ""} key={id}>
+                  <li
+                    className={url === linkTo ? "activePg" : ""}
+                    key={linkName}
+                  >
                     <Link to={linkTo}>{linkName}</Link>
                   </li>
                 );

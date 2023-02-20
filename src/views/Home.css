@@ -1,6 +1,5 @@
 .content-wrapper {
   margin: 0 0 5rem;
-  padding: 56px 0 0 0;
   min-height: 500px;
 }
 
@@ -9,19 +8,17 @@
   flex-direction: column;
 }
 
+.section-lookingFor {
+  margin: 3rem 0 0;
+}
+
 @media only screen and (min-width: 768px) {
-  .content-wrapper {
-    padding: 75px 0 0 0;
-  }
 }
 
 @media only screen and (min-width: 1025px) {
-  .content-wrapper {
-    padding: 112px 0 0 0;
-  }
-
   .section-wrapper {
     max-width: 1200px;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
