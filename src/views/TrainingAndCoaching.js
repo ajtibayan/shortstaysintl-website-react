@@ -14,25 +14,36 @@ const TrainingAndCoaching = () => {
       <MainNav />
       <SubBanner bannerUrl={location.pathname} />
       <div className="content-wrapper">
-        <section className="section-wrapper">
-          <h2>Training & Coaching Page</h2>
-        </section>
         <section className="tncEvents">
-          <div className="event1">
-            <a href="#">
-              <h2>FREE Workshops</h2>
+          <div className="event1 event-container">
+            <a href="#" className="event-image-container">
+              {/* <h2>FREE Workshops</h2> */}
+              <figure className="event-image">
+                <picture>
+                  <img src="/images/trainingandcoaching/freeWorkshops.png" />
+                </picture>
+              </figure>
             </a>
             <div className="eventDetails">
               <p>
                 We provide monthly free workshops to support your short-term
                 rental journey.
               </p>
-              <button className="eventLearnMore">Learn More</button>
+              <div className="eventLearnMore-container">
+                <a href="#" className="eventLearnMore">
+                  Learn More
+                </a>
+              </div>
             </div>
           </div>
-          <div className="event2">
-            <a href="#">
-              <h2>One-on-One Mentoring</h2>
+          <div className="event2 event-container">
+            <a href="#" className="event-image-container">
+              {/* <h2>One-on-One Mentoring</h2> */}
+              <figure className="event-image">
+                <picture>
+                  <img src="/images/trainingandcoaching/oneOnOne.png" />
+                </picture>
+              </figure>
             </a>
             <div className="eventDetails">
               <p>
@@ -40,12 +51,21 @@ const TrainingAndCoaching = () => {
                 how to get your place ready and listed on Airbnb as we work
                 towards your Superhost status.
               </p>
-              <button className="eventLearnMore">Learn More</button>
+              <div className="eventLearnMore-container">
+                <a href="#" className="eventLearnMore">
+                  Learn More
+                </a>
+              </div>
             </div>
           </div>
-          <div className="event3">
-            <a href="#">
-              <h2>Short-Term Rental Blueprint Course</h2>
+          <div className="event3 event-container">
+            <a href="#" className="event-image-container">
+              {/* <h2>Short-Term Rental Blueprint Course</h2> */}
+              <figure className="event-image">
+                <picture>
+                  <img src="/images/trainingandcoaching/shortTerm.png" />
+                </picture>
+              </figure>
             </a>
             <div className="eventDetails">
               <p>
@@ -54,7 +74,11 @@ const TrainingAndCoaching = () => {
                 business to the next level and operate like a true rental
                 management company?
               </p>
-              <button className="eventLearnMore">Learn More</button>
+              <div className="eventLearnMore-container">
+                <a href="#" className="eventLearnMore">
+                  Learn More
+                </a>
+              </div>
             </div>
           </div>
         </section>
