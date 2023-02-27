@@ -12,7 +12,9 @@ const OurServicesSection = () => {
 
   useEffect(() => {
     const fetchOurServicesContent = async () => {
-      const response = await fetch("/api/homepage/ourServicesSection");
+      const response = await fetch(
+        "http://ajtibayan.com/shortstaysintl/api/homepage/ourServicesSection"
+      );
       const json = await response.json();
 
       if (response.ok) {

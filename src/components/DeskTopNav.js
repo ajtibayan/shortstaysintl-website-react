@@ -14,7 +14,9 @@ const DeskTopNav = ({ scrollTop, url }) => {
 
   useEffect(() => {
     const fetchNavigationContent = async () => {
-      const response = await fetch("/api/navigation");
+      const response = await fetch(
+        "http://ajtibayan.com/shortstaysintl/api/navigation"
+      );
       const json = await response.json();
 
       if (response.ok) {

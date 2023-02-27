@@ -8,7 +8,9 @@ const Testimonials = () => {
 
   useEffect(() => {
     const fetchTestimonialsContent = async () => {
-      const response = await fetch("/api/homepage/testimonialsSection");
+      const response = await fetch(
+        "http://ajtibayan.com/shortstaysintl/api/homepage/testimonialsSection"
+      );
       const json = await response.json();
 
       if (response.ok) {

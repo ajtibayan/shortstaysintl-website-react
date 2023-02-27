@@ -12,7 +12,9 @@ const LookingFor = () => {
 
   useEffect(() => {
     const fetchLookingForContent = async () => {
-      const response = await fetch("/api/homepage/lookingForSection");
+      const response = await fetch(
+        "http://ajtibayan.com/shortstaysintl/api/homepage/lookingForSection"
+      );
       const json = await response.json();
 
       if (response.ok) {
