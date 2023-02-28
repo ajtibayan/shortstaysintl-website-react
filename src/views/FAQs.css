@@ -1,0 +1,89 @@
+.article-qanda {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "ownersTitle"
+    "ownersText"
+    "guestsTitle"
+    "guestsText"
+    "qnaImg";
+  grid-template-columns: 1fr;
+}
+
+.qanda-text_container {
+  margin-bottom: 25px;
+}
+
+.ownersText {
+  width: 100%;
+  grid-area: ownersText;
+}
+
+.guestsText {
+  width: 100%;
+  grid-area: guestsText;
+}
+
+.owners-title {
+  width: 100%;
+  grid-area: ownersTitle;
+}
+
+.guests-title {
+  width: 100%;
+  grid-area: guestsTitle;
+}
+
+.qanda-img_container {
+  width: 100%;
+  grid-area: qnaImg;
+  display: flex;
+  flex-direction: column;
+}
+
+.qanda-img_wrapper {
+  margin: 20px 20px 0 20px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.qanda-img_wrapper img {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.qanda-img_btn_container {
+  margin: 0;
+  padding: 0;
+}
+
+.qanda-img_btn_container a {
+  display: block;
+  width: 100%;
+  margin: 0;
+  text-decoration: none;
+  background-color: #4375f4;
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 3rem;
+}
+
+.qanda-img_btn_container a span {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 768px) {
+  .article-qanda {
+    grid-template-areas:
+      "ownersTitle qnaImg"
+      "ownersText qnaImg"
+      "guestsTitle qnaImg"
+      "guestsText qnaImg";
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
