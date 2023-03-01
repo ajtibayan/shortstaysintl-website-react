@@ -52,9 +52,9 @@ const DeskTopNav = ({ scrollTop, url }) => {
             </ul>
           </div>
           <div className="header-top_container--right">
-            <a href="#">
+            {/* <a href="#">
               <FontAwesomeIcon icon="fa-circle-user" />
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

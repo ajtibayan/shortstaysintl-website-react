@@ -1,0 +1,137 @@
+.article-wrapper {
+  width: 100%;
+  padding: 0 20px;
+  display: grid;
+  grid-template-areas:
+    "txtContainer"
+    "formContainer";
+}
+
+.contactForm-txtContainer {
+  margin: 0 0 40px 0;
+  grid-area: txtContainer;
+}
+
+.contactForm-txtContainer h2 {
+  margin-bottom: 20px;
+  color: #4375f4;
+}
+
+.contactForm-txtContainer p {
+  margin-bottom: 20px;
+}
+
+.contactForm-txtContainer ul {
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+.contactForm-txtContainer ul li {
+  line-height: 1.5rem;
+}
+
+.contactForm-txtContainer ul li a {
+  text-decoration: none;
+  color: #4375f4;
+}
+
+.contactForm-txtContainer ul li a:hover,
+.contactForm-txtContainer ul li a:focus {
+  text-decoration: underline;
+}
+
+.contactForm-formContainer {
+  grid-area: formContainer;
+}
+
+.form-layout {
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "name"
+    "phone"
+    "email"
+    "propType"
+    "address"
+    "btnSubmit";
+  grid-template-columns: 1fr;
+}
+
+.input-name {
+  grid-area: name;
+}
+
+.input-phone {
+  grid-area: phone;
+}
+
+.input-email {
+  grid-area: email;
+}
+
+.input-propType {
+  grid-area: propType;
+}
+
+.input-address {
+  grid-area: address;
+}
+
+.input-btnSubmit {
+  margin-top: 10px;
+  grid-area: btnSubmit;
+}
+
+.cpSubmit {
+  position: relative;
+  border-radius: 4px;
+  height: 52px;
+  padding: 14px 20px;
+  background-color: #4375f4;
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.35s;
+  border: 0;
+}
+
+.cpSubmit:hover,
+.cpSubmit:focus {
+  -webkit-box-shadow: 0px 5px 15px rgb(0 0 0 / 20%);
+  box-shadow: 0px 5px 15px rgb(0 0 0 / 20%);
+  color: #333;
+  background-color: #ffde59;
+}
+
+.react-tel-input {
+  height: 52px;
+  border: none;
+  border-radius: 3px;
+  background: #f0f3f6;
+}
+
+@media only screen and (min-width: 768px) {
+  .article-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    grid-template-areas: "txtContainer formContainer";
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .contactForm-txtContainer {
+    margin: 0 40px 40px 0;
+    grid-area: txtContainer;
+  }
+
+  .form-layout {
+    grid-template-areas:
+      "name phone"
+      "email propType"
+      "address address"
+      "btnSubmit .";
+    grid-template-columns: 1fr 1fr;
+  }
+}

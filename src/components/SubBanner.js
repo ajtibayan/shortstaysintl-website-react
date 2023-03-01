@@ -24,7 +24,12 @@ const SubBanner = ({ bannerUrl }) => {
   return (
     <section
       className="subBanner"
-      style={bgImg && { backgroundImage: `url(${bgImg})` }}
+      style={
+        bgImg && {
+          backgroundImage: `url(${bgImg})`,
+          backgroundPosition: "center",
+        }
+      }
     >
       <div className="banner-overlay"></div>
       <div className="subBanner-wrapper">
