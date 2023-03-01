@@ -1,8 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Autocomplete, useLoadScript } from "@react-google-maps/api";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PhoneInput from "react-phone-input-2";
 
 // Components and Styles
+import "react-phone-input-2/lib/style.css";
 import "./Main.css";
 
 const placesLibrary = ["places"];
@@ -14,8 +17,18 @@ const Main = () => {
     [displayLocationForm, setDisplayLocationForm] = useState(true),
     [displayUserInfoForm, setDisplayUserInfoForm] = useState(false),
     [formattedAddress, setFormattedAddress] = useState(),
-    initValue = { address: "", fname: "", lname: "", email: "", phone: "" },
+    initValue = {
+      address: "",
+      fname: "",
+      lname: "",
+      email: "",
+      phone: "",
+      contactFormType: "hpForm",
+    },
     [formVals, setFormVals] = useState(initValue),
+    [formErrs, setFormErrs] = useState({}),
+    [isSubmit, setIsSubmit] = useState(false),
+    [isSent, setIsSent] = useState(false),
     restrictions = {
       country: "ca",
     },
@@ -39,17 +52,54 @@ const Main = () => {
       setDisplayLocationForm((prevVis) => !prevVis);
       setDisplayUserInfoForm((prevShow) => !prevShow);
       setFormVals({ ...formVals, address: place.formatted_address });
-      //   const name = place.name;
-      //   const status = place.address_components[0].short_name;
-      //   const formattedAddress = place.formatted_address;
-      //   console.log(place);
-      //   console.log(`Name: ${name}`);
-      //   console.log(`Address Num: ${status}`);
-      //   console.log(`Formatted Address: ${formattedAddress}`);
     } else {
       alert("Please enter text");
     }
   }
+
+  useEffect(() => {
+    if (Object.keys(formErrs).length === 0 && isSubmit) {
+      // console.log(formVals);
+      const sendFormEmail = async () => {
+        const response = await fetch(
+          "http://ajtibayan.com/shortstaysintl/contactform",
+          {
+            method: "POST",
+            body: JSON.stringify(formVals),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+
+        const json = await response.json();
+
+        if (!response.ok) {
+          console.log(json.error);
+          setIsSubmit(false);
+          setIsSent(false);
+        }
+
+        if (response.ok) {
+          if (json.sent) {
+            setFormVals(initValue);
+            setIsSent(true);
+            setFormErrs({});
+            setIsSubmit(false);
+          }
+        }
+      };
+
+      sendFormEmail();
+    }
+  }, [formErrs, isSubmit]);
+
+  useEffect(() => {
+    if (isSent) {
+      const msgSent = setTimeout(() => setIsSent(false), 5000);
+      return () => clearTimeout(msgSent);
+    }
+  }, [isSent]);
 
   if (!isLoaded) {
     return <div>Loading...</div>;
@@ -71,6 +121,8 @@ const Main = () => {
   const handleFormSubmitFinal = (e) => {
     e.preventDefault();
     console.log(form.current);
+    setFormErrs(validate(formVals));
+    setIsSubmit(true);
   };
 
   const handleFormBack = (e) => {
@@ -82,6 +134,31 @@ const Main = () => {
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormVals({ ...formVals, [id]: value });
+  };
+
+  const validate = (vals) => {
+    const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+    if (!vals.fname) {
+      errors.fname = "Name is required!";
+    } else if (vals.fname.length < 2) {
+      errors.fname = "Enter at least 2 characters!";
+    }
+
+    if (!vals.lname) {
+      errors.lname = "Name is required!";
+    } else if (vals.lname.length < 2) {
+      errors.lname = "Enter at least 2 characters!";
+    }
+
+    if (!vals.email) {
+      errors.email = "Email is required!";
+    } else if (!regex.test(vals.email)) {
+      errors.email = "This is not a valid email format!";
+    }
+
+    return errors;
   };
 
   return (
@@ -139,6 +216,16 @@ const Main = () => {
           </div>
           <h2>Unlock your revenue potential</h2>
           <h3>{formattedAddress}</h3>
+          {isSent && (
+            <motion.h3
+              className="sent"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
+              Successful Rental Analysis Request!
+            </motion.h3>
+          )}
           <div className="main-form-container2_input-container">
             <input
               className="input-text user-text-field"
@@ -150,6 +237,16 @@ const Main = () => {
               value={formVals.fname}
               onChange={handleChange}
             />
+            {formErrs.fname && (
+              <motion.p
+                className="error"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                {formErrs.fname}
+              </motion.p>
+            )}
             <input
               className="input-text user-text-field"
               type="text"
@@ -160,6 +257,16 @@ const Main = () => {
               value={formVals.lname}
               onChange={handleChange}
             />
+            {formErrs.lname && (
+              <motion.p
+                className="error"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                {formErrs.lname}
+              </motion.p>
+            )}
             <input
               className="input-text user-text-field"
               type="text"
@@ -170,7 +277,46 @@ const Main = () => {
               value={formVals.email}
               onChange={handleChange}
             />
-            <input
+            {formErrs.email && (
+              <motion.p
+                className="error"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                {formErrs.email}
+              </motion.p>
+            )}
+            <PhoneInput
+              country={"ca"}
+              containerStyle={{ padding: "0" }}
+              inputStyle={{
+                height: "52px",
+                border: "none",
+                background: "#f0f3f6",
+                borderRadius: "3px",
+              }}
+              buttonStyle={{ border: "none", background: "#f0f3f6" }}
+              className="input-text user-text-field"
+              type="text"
+              placeholder="Phone (optional)"
+              id="phone"
+              name="phone"
+              required
+              value={formVals.value}
+              onChange={(phone) => setFormVals({ ...formVals, phone: phone })}
+            />
+            {formErrs.phone && (
+              <motion.p
+                className="error"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
+              >
+                {formErrs.phone}
+              </motion.p>
+            )}
+            {/* <input
               className="input-text user-text-field"
               type="text"
               placeholder="Phone (optional)"
@@ -178,7 +324,7 @@ const Main = () => {
               name="phone"
               value={formVals.phone}
               onChange={handleChange}
-            />
+            /> */}
             <input
               className="input-text user-text-field"
               type="hidden"
