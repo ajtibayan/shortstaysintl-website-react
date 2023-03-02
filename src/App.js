@@ -15,6 +15,7 @@ import OurServices from "./views/OurServices";
 import TrainingAndCoaching from "./views/TrainingAndCoaching";
 import FAQs from "./views/FAQs";
 import Contact from "./views/Contact";
+import BookWithUs from "./views/BookWithUs";
 import ErrorPage from "./views/ErrorPage";
 import "./App.css";
 
@@ -29,6 +30,7 @@ function App() {
       <Route path="/TrainingAndCoaching" element={<TrainingAndCoaching />} />
       <Route path="/FAQs" element={<FAQs />} />
       <Route path="/Contact" element={<Contact />} />
+      <Route path="/BookWithUs" element={<BookWithUs />} />
       <Route path="/*" element={<ErrorPage />} />
     </Routes>
   );

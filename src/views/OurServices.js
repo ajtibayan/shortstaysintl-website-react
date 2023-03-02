@@ -126,7 +126,7 @@ export const ServiceItemDesktop = () => {
               key={`dtDesc-${divClass}`}
             >
               <h3>{title}</h3>
-              {description.map(({ subHeading, bullets, index }) => {
+              {description.map(({ subHeading, bullets }, index) => {
                 return (
                   <React.Fragment key={index}>
                     {subHeading === "travel" || subHeading === "financing" ? (

@@ -127,6 +127,22 @@
   font-weight: bold;
 }
 
+.header-mobile-content .bookWithUsBtn-container {
+  margin-right: 20px;
+}
+
+.header-mobile-content .bookWithUsBtn-container a {
+  background-color: #fff;
+  color: #333;
+  font-size: 0.8rem;
+}
+
+.header-mobile-content .bookWithUsBtn-container a:hover,
+.header-mobile-content.bookWithUsBtn-container a:focus {
+  color: #fff;
+  background-color: #4375f4;
+}
+
 @media only screen and (min-width: 800px) {
   .topbar-mobile {
     padding: 5px 30px;

@@ -24,4 +24,9 @@ export const subBanners = [
     bannerImgUrl: "/images/contact/subBanner.jpg",
     breadcrumb: "Contact",
   },
+  {
+    page: "/BookWithUs",
+    bannerImgUrl: "/images/bookwithus/subBanner.jpg",
+    breadcrumb: "Book With Us",
+  },
 ];
