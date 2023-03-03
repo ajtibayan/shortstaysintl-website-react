@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 // Components and Styles
@@ -18,7 +17,7 @@ const BookWithUs = () => {
       indexNum: "1",
       title: "BOOK A STAY",
       text: "Looking for a place for your team or staff when working in the GTA or Niagara Falls?",
-      btnUrl: "www.airbnb.ca/p/shortstaysinternational",
+      btnUrl: "https://www.airbnb.ca/users/41514146/listings",
       btnText: "Check Our Listings",
     },
     {

@@ -81,22 +81,29 @@
   color: #717580;
 }
 
+.footer-form .input-name {
+  margin-bottom: 8px;
+}
+
 @media only screen and (min-width: 768px) {
   .footer_container {
     max-width: 1200px;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .footer_container--col1 {
-    width: 30%;
-    padding-right: 25px;
+    width: 40%;
+    padding-right: 60px;
   }
 
   .footer_container--col2 {
-    width: 18%;
+    width: 20%;
   }
 
   .footer_container--col3 {
-    width: 20%;
+    padding-left: 40px;
+    width: 40%;
   }
 
   .footer_container--col4 {

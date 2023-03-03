@@ -131,14 +131,14 @@
   margin-right: 20px;
 }
 
-.header-mobile-content .bookWithUsBtn-container a {
+.header-mobile-content .bookWithUsBtn-container a.btn {
   background-color: #fff;
   color: #333;
   font-size: 0.8rem;
 }
 
-.header-mobile-content .bookWithUsBtn-container a:hover,
-.header-mobile-content.bookWithUsBtn-container a:focus {
+.header-mobile-content .bookWithUsBtn-container a.btn:hover,
+.header-mobile-content.bookWithUsBtn-container a.btn:focus {
   color: #fff;
   background-color: #4375f4;
 }
