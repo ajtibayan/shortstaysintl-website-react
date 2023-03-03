@@ -83,7 +83,9 @@ const DeskTopNav = ({ scrollTop, url }) => {
             </ul>
 
             <div className="bookWithUsBtn-container">
-              <Link to="/BookWithUs">Book With Us</Link>
+              <Link to="/BookWithUs" className="btn">
+                Book With Us
+              </Link>
             </div>
           </div>
         </div>

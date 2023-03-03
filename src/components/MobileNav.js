@@ -57,7 +57,9 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
         </div>
         <div className="header-right">
           <div className="bookWithUsBtn-container">
-            <Link to="/BookWithUs">Book With Us</Link>
+            <Link to="/BookWithUs" className="btn">
+              Book With Us
+            </Link>
           </div>
           <a
             href="#"
