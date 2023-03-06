@@ -93,10 +93,10 @@ const FAQs = () => {
             </div>
             <div className="qanda-img_container">
               <div className="qanda-img_wrapper">
-                <img src="/images/faqs/danny-transparent.png" />
+                <img src="/staging/images/faqs/danny-transparent.png" />
               </div>
               <div className="qanda-img_btn_container">
-                <Link to="/Contact">
+                <Link to={`${process.env.PUBLIC_URL}/Contact`}>
                   <span>INTERESTED?</span> CONTACT US NOW
                 </Link>
               </div>

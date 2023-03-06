@@ -17,7 +17,10 @@ const About = () => {
       <div className="content-wrapper aboutPg">
         <section className="section-wrapper">
           <article className="about_ssi clearfix">
-            <img src="/images/about/About-Us.jpg" className="leftImg"></img>
+            <img
+              src="/staging/images/about/About-Us.jpg"
+              className="leftImg"
+            ></img>
             <h2>About Us</h2>
             <p>
               Short Stays International is a boutique company specializing in
@@ -88,14 +91,14 @@ const About = () => {
 
           <article className="about_our-mission">
             <img
-              src="/images/about/ourMissionImg.jpg"
+              src="/staging/images/about/ourMissionImg.jpg"
               className="our-mission-img"
             />
           </article>
 
           <article className="about_our-values">
             <div className="value-integrity">
-              <img src="/images/about/values-integrity.png" />
+              <img src="/staging/images/about/values-integrity.png" />
               <p>
                 We set proper expectations and do what we said we would do for
                 our clients to ensure their properties are well taken care of
@@ -103,7 +106,7 @@ const About = () => {
               </p>
             </div>
             <div className="value-honesty">
-              <img src="/images/about/values-honesty.png" />
+              <img src="/staging/images/about/values-honesty.png" />
               <p>
                 We are not shy to tell our clients what will work and what will
                 not work and we will let you know the best options for you (even
@@ -111,14 +114,14 @@ const About = () => {
               </p>
             </div>
             <div className="value-teamwork">
-              <img src="/images/about/values-teamwork.png" />
+              <img src="/staging/images/about/values-teamwork.png" />
               <p>
                 We are team players and are always open to customize our
                 offering to your needs.
               </p>
             </div>
             <div className="value-positivity">
-              <img src="/images/about/values-positivity.png" />
+              <img src="/staging/images/about/values-positivity.png" />
               <p>
                 We believe in creating win-win opportunities & to treat others
                 with kindness. This is why our guests & clients love us -

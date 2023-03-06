@@ -2,7 +2,7 @@ export const serviceItems = [
   {
     title: "Consulting",
     divClass: "consulting",
-    image: "/images/ourservices/service-consulting.jpg",
+    image: "/staging/images/ourservices/service-consulting.jpg",
     description: [
       {
         subHeading: "",
@@ -22,7 +22,7 @@ export const serviceItems = [
     title:
       "Account & Listing Set-up: $300 for Airbnb ($100 on additional platforms)",
     divClass: "listing",
-    image: "/images/ourservices/service-listing.jpg",
+    image: "/staging/images/ourservices/service-listing.jpg",
     description: [
       {
         subHeading: "",
@@ -40,7 +40,7 @@ export const serviceItems = [
     title:
       "Co-hosting & Guests Management: 15-20% of revenue after cleaning fees",
     divClass: "management",
-    image: "/images/ourservices/service-management.jpg",
+    image: "/staging/images/ourservices/service-management.jpg",
     description: [
       {
         subHeading: "Online Management",
@@ -87,7 +87,7 @@ export const serviceItems = [
   {
     title: "Travel Coordination",
     divClass: "travel",
-    image: "/images/ourservices/service-travel.jpg",
+    image: "/staging/images/ourservices/service-travel.jpg",
     description: [
       {
         subHeading: "travel",
@@ -100,7 +100,7 @@ export const serviceItems = [
   {
     title: "Financing",
     divClass: "financing",
-    image: "/images/ourservices/service-financing.jpg",
+    image: "/staging/images/ourservices/service-financing.jpg",
     description: [
       {
         subHeading: "financing",

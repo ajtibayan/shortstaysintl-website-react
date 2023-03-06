@@ -103,8 +103,14 @@ const Footer = () => {
       <footer className="footer">
         <div className="footer_container">
           <div className="footer_container--col1">
-            <Link to="/" className="footer_container--logo-link">
-              <img src="/images/4.png" className="footer_container--logo" />
+            <Link
+              to={`${process.env.PUBLIC_URL}/`}
+              className="footer_container--logo-link"
+            >
+              <img
+                src="/staging/images/4.png"
+                className="footer_container--logo"
+              />
             </Link>
             <div className="footer_container--col1-text">
               <p>
@@ -120,7 +126,9 @@ const Footer = () => {
                 {mainNav.map(({ id, linkTo, linkName }) => {
                   return (
                     <li key={id}>
-                      <Link to={linkTo}>{linkName}</Link>
+                      <Link to={`${process.env.PUBLIC_URL}${linkTo}`}>
+                        {linkName}
+                      </Link>
                     </li>
                   );
                 })}

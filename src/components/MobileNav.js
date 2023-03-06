@@ -51,13 +51,13 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
       </div>
       <div className="header-mobile-content">
         <div className="header-left">
-          <Link to="/">
+          <Link to={`${process.env.PUBLIC_URL}/`}>
             <img src="/images/4.png" className="header-mobile--logo" />
           </Link>
         </div>
         <div className="header-right">
           <div className="bookWithUsBtn-container">
-            <Link to="/BookWithUs" className="btn">
+            <Link to={`${process.env.PUBLIC_URL}/BookWithUs`} className="btn">
               Book With Us
             </Link>
           </div>
@@ -83,7 +83,9 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
                 {mainNav.map(({ linkTo, linkName }) => {
                   return (
                     <li key={linkName}>
-                      <Link to={linkTo}>{linkName}</Link>
+                      <Link to={`${process.env.PUBLIC_URL}${linkTo}`}>
+                        {linkName}
+                      </Link>
                     </li>
                   );
                 })}

@@ -17,7 +17,7 @@ const Service = ({
       <div className="services-text">
         <h4>{serviceName}</h4>
         <p>{serviceText}</p>
-        <Link to={linkLoc}>Learn More ></Link>
+        <Link to={`${process.env.PUBLIC_URL}${linkLoc}`}>Learn More ></Link>
       </div>
     </div>
   );

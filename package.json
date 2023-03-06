@@ -1,8 +1,8 @@
 {
-  "proxy": "http://localhost:4000",
   "name": "Short Stays Intl",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://shortstaysintl.com/staging/",
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",

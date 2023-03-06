@@ -36,7 +36,7 @@ const SubBanner = ({ bannerUrl }) => {
         <div className="subBanner-container">
           <ul className="breadcrumb">
             <li>
-              <Link to="/">Home</Link>
+              <Link to={`${process.env.PUBLIC_URL}/`}>Home</Link>
             </li>
             <li>{breadcrumb}</li>
           </ul>

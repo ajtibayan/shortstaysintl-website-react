@@ -30,7 +30,7 @@ const DeskTopNav = ({ scrollTop, url }) => {
   return (
     <div
       className={`header-main${scrollTop >= 40 ? " isFixed" : ""}${
-        url != "/" ? " subPg" : ""
+        url != "/staging/" ? " subPg" : ""
       }`}
     >
       <div className="header-top">
@@ -61,9 +61,9 @@ const DeskTopNav = ({ scrollTop, url }) => {
       <div className="header-content">
         <div className="header-content_container">
           <div className="header-content_container--left">
-            <Link to="/">
+            <Link to={`${process.env.PUBLIC_URL}/`}>
               <img
-                src="/images/4.png"
+                src="/staging/images/4.png"
                 className="header-content_container--logo"
               />
             </Link>
@@ -76,14 +76,16 @@ const DeskTopNav = ({ scrollTop, url }) => {
                     className={url === linkTo ? "activePg" : ""}
                     key={linkName}
                   >
-                    <Link to={linkTo}>{linkName}</Link>
+                    <Link to={`${process.env.PUBLIC_URL}${linkTo}`}>
+                      {linkName}
+                    </Link>
                   </li>
                 );
               })}
             </ul>
 
             <div className="bookWithUsBtn-container">
-              <Link to="/BookWithUs" className="btn">
+              <Link to={`${process.env.PUBLIC_URL}/BookWithUs`} className="btn">
                 Book With Us
               </Link>
             </div>

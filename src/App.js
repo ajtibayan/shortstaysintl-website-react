@@ -24,14 +24,28 @@ library.add(fas, faTwitter, faSquareFacebook, faLinkedin, faInstagram);
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/OurServices" element={<OurServices />} />
-      <Route path="/TrainingAndCoaching" element={<TrainingAndCoaching />} />
-      <Route path="/FAQs" element={<FAQs />} />
-      <Route path="/Contact" element={<Contact />} />
-      <Route path="/BookWithUs" element={<BookWithUs />} />
-      <Route path="/*" element={<ErrorPage />} />
+      <Route path="/staging">
+        <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
+        <Route path={`${process.env.PUBLIC_URL}/About`} element={<About />} />
+        <Route
+          path={`${process.env.PUBLIC_URL}/OurServices`}
+          element={<OurServices />}
+        />
+        <Route
+          path={`${process.env.PUBLIC_URL}/TrainingAndCoaching`}
+          element={<TrainingAndCoaching />}
+        />
+        <Route path={`${process.env.PUBLIC_URL}/FAQs`} element={<FAQs />} />
+        <Route
+          path={`${process.env.PUBLIC_URL}/Contact`}
+          element={<Contact />}
+        />
+        <Route
+          path={`${process.env.PUBLIC_URL}/BookWithUs`}
+          element={<BookWithUs />}
+        />
+        <Route path={`${process.env.PUBLIC_URL}/*`} element={<ErrorPage />} />
+      </Route>
     </Routes>
   );
 }

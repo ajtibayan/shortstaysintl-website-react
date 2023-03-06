@@ -22,7 +22,7 @@ const BookWithUsBox = ({
             {btnText}
           </a>
         ) : (
-          <Link to={btnUrl} className="btn">
+          <Link to={`${process.env.PUBLIC_URL}${btnUrl}`} className="btn">
             {btnText}
           </Link>
         )}

@@ -138,7 +138,7 @@ const TrainingAndCoaching = () => {
               {/* <h2>FREE Workshops</h2> */}
               <figure className="event-image">
                 <picture>
-                  <img src="/images/trainingandcoaching/freeWorkshops.png" />
+                  <img src="/staging/images/trainingandcoaching/freeWorkshops.png" />
                 </picture>
               </figure>
             </a>
@@ -149,7 +149,7 @@ const TrainingAndCoaching = () => {
               </p>
               <div className="eventLearnMore-container">
                 <a
-                  href={"/TrainingAndCoaching#eventForm"}
+                  href={"/staging/TrainingAndCoaching#eventForm"}
                   className="eventLearnMore"
                 >
                   Learn More
@@ -162,7 +162,7 @@ const TrainingAndCoaching = () => {
               {/* <h2>One-on-One Mentoring</h2> */}
               <figure className="event-image">
                 <picture>
-                  <img src="/images/trainingandcoaching/oneOnOne.png" />
+                  <img src="/staging/images/trainingandcoaching/oneOnOne.png" />
                 </picture>
               </figure>
             </a>
@@ -174,7 +174,7 @@ const TrainingAndCoaching = () => {
               </p>
               <div className="eventLearnMore-container">
                 <a
-                  href={"/TrainingAndCoaching#eventForm"}
+                  href={"/staging/TrainingAndCoaching#eventForm"}
                   className="eventLearnMore"
                 >
                   Learn More
@@ -187,7 +187,7 @@ const TrainingAndCoaching = () => {
               {/* <h2>Short-Term Rental Blueprint Course</h2> */}
               <figure className="event-image">
                 <picture>
-                  <img src="/images/trainingandcoaching/shortTerm.png" />
+                  <img src="/staging/images/trainingandcoaching/shortTerm.png" />
                 </picture>
               </figure>
             </a>
@@ -200,7 +200,7 @@ const TrainingAndCoaching = () => {
               </p>
               <div className="eventLearnMore-container">
                 <a
-                  href={"/TrainingAndCoaching#eventForm"}
+                  href={"/staging/TrainingAndCoaching#eventForm"}
                   className="eventLearnMore"
                 >
                   Learn More

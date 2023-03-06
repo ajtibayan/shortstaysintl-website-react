@@ -34,7 +34,7 @@ const MainNav = () => {
   }, []);
 
   return (
-    <header className={`header ${url === "/" ? "homePg" : ""}`}>
+    <header className={`header ${url === "/staging/" ? "homePg" : ""}`}>
       <MobileNav
         sidebarVisibility={sidebarVisibility}
         handleMainMenuClick={handleMainMenuClick}

@@ -11,10 +11,10 @@ const Marketed = () => {
       </div>
       <div className="listing-websites-logos">
         <a href="#" className="grid-logo logo-airbnb">
-          <img src="/images/Airbnb_Logo.png" alt="" />
+          <img src="/staging/images/Airbnb_Logo.png" alt="" />
         </a>
         <a href="#" className="grid-logo logo-vrbo">
-          <img src="/images/Vrbo_Logo.png" alt="" />
+          <img src="/staging/images/Vrbo_Logo.png" alt="" />
         </a>
       </div>
     </section>
