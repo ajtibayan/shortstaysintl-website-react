@@ -35,28 +35,6 @@ const TrainingAndCoaching = () => {
 
   useEffect(() => {
     if (Object.keys(formErrs).length === 0 && isSubmit) {
-      // emailjs
-      //   .sendForm(
-      //     "YOUR_SERVICE_ID",
-      //     "YOUR_TEMPLATE_ID",
-      //     form.current,
-      //     "YOUR_PUBLIC_KEY"
-      //   )
-      //   .then(
-      //     (result) => {
-      //       console.log(result.text);
-      //       //  setFormVals(initValue);
-      //       //  setIsSent(true);
-      //       //  setFormErrs({});
-      //       //  setIsSubmit(false);
-      //     },
-      //     (error) => {
-      //       console.log(error.text);
-      //       //  setIsSubmit(false);
-      //       //  setIsSent(false);
-      //     }
-      //   );
-
       const sendFormEmail = async () => {
         const response = await fetch(
           "http://ajtibayan.com/shortstaysintl/contactform",
@@ -104,8 +82,8 @@ const TrainingAndCoaching = () => {
 
     if (!vals.name) {
       errors.name = "Name is required!";
-    } else if (vals.name.length < 4) {
-      errors.name = "Enter at least 4 characters!";
+    } else if (vals.name.length < 2) {
+      errors.name = "Enter at least 2 characters!";
     }
 
     if (!vals.email) {
@@ -122,11 +100,6 @@ const TrainingAndCoaching = () => {
     return errors;
   };
 
-  const scrollToEventForm = (e) => {
-    e.preventDefault();
-    console.log("Scroll To Form");
-  };
-
   return (
     <>
       <MainNav />
@@ -134,14 +107,19 @@ const TrainingAndCoaching = () => {
       <div className="content-wrapper">
         <section className="tncEvents">
           <div className="event1 event-container">
-            <a href="" className="event-image-container">
+            <div className="event-image-container">
               {/* <h2>FREE Workshops</h2> */}
               <figure className="event-image">
                 <picture>
-                  <img src="/images/trainingandcoaching/freeWorkshops.png" />
+                  <img
+                    src="/images/trainingandcoaching/freeWorkshops.jpg"
+                    alt="Presenter and attendees in a workshop"
+                    width={1080}
+                    height={1350}
+                  />
                 </picture>
               </figure>
-            </a>
+            </div>
             <div className="eventDetails">
               <p>
                 We provide monthly free workshops to support your short-term
@@ -158,14 +136,19 @@ const TrainingAndCoaching = () => {
             </div>
           </div>
           <div className="event2 event-container">
-            <a href="#" className="event-image-container">
+            <div className="event-image-container">
               {/* <h2>One-on-One Mentoring</h2> */}
               <figure className="event-image">
                 <picture>
-                  <img src="/images/trainingandcoaching/oneOnOne.png" />
+                  <img
+                    src="/images/trainingandcoaching/oneOnOne.jpg"
+                    alt="Two people talking"
+                    width={1080}
+                    height={1350}
+                  />
                 </picture>
               </figure>
-            </a>
+            </div>
             <div className="eventDetails">
               <p>
                 Let us help you generate immediate revenue by mentoring you on
@@ -183,14 +166,19 @@ const TrainingAndCoaching = () => {
             </div>
           </div>
           <div className="event3 event-container">
-            <a href="#" className="event-image-container">
+            <div className="event-image-container">
               {/* <h2>Short-Term Rental Blueprint Course</h2> */}
               <figure className="event-image">
                 <picture>
-                  <img src="/images/trainingandcoaching/shortTerm.png" />
+                  <img
+                    src="/images/trainingandcoaching/shortTerm.jpg"
+                    alt="Desktop computer"
+                    width={1080}
+                    height={1350}
+                  />
                 </picture>
               </figure>
-            </a>
+            </div>
             <div className="eventDetails">
               <p>
                 Interested in learning more about our Short-Term Rental Blue

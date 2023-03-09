@@ -62,12 +62,13 @@
   display: none;
 }
 
-.main-form-container_location-input svg.fa-location-dot {
+.main-form-container_location-input i.fa-location-dot {
   position: absolute;
   height: 24px;
   margin-left: 15px;
   margin-top: 14px;
   color: #343434;
+  font-size: 1.25rem;
 }
 
 .input-text {
@@ -100,8 +101,9 @@
   background-color: #ffcc00;
 }
 
-.main-form-container_location-submit svg.fa-arrow-right {
+.main-form-container_location-submit i.fa-arrow-right {
   height: 22px;
+  font-size: 1.5rem;
 }
 
 .main-form-container2 {
@@ -131,6 +133,14 @@
 
 .back-arrow-container_link {
   display: flex;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.back-arrow-container_link i {
+  margin-top: 1px;
 }
 
 .back-arrow-container_link span {
@@ -170,6 +180,7 @@
   border: none;
   box-shadow: none;
   outline: none;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 800px) {

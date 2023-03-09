@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import {
-  faTwitter,
-  faSquareFacebook,
-  faLinkedin,
-  faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { fas } from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faTwitter,
+//   faSquareFacebook,
+//   faLinkedin,
+//   faInstagram,
+// } from "@fortawesome/free-brands-svg-icons";
 
 // Components and Styles
 import Home from "./views/Home";
@@ -19,7 +19,7 @@ import BookWithUs from "./views/BookWithUs";
 import ErrorPage from "./views/ErrorPage";
 import "./App.css";
 
-library.add(fas, faTwitter, faSquareFacebook, faLinkedin, faInstagram);
+// library.add(fas, faTwitter, faSquareFacebook, faLinkedin, faInstagram);
 
 function App() {
   return (

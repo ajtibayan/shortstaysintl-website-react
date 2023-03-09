@@ -10,6 +10,10 @@
   line-height: 2.5rem;
 }
 
+.section-wrapper.section-ourServices h2 {
+  color: var(--brand-blue);
+}
+
 .section-wrapper h4 {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -69,6 +73,7 @@
 
 .img-wrapper img {
   width: 35%;
+  height: auto;
   border-radius: 50%;
 }
 

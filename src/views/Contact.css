@@ -113,6 +113,18 @@
   background: #f0f3f6;
 }
 
+.input-textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 2px;
+  font-size: 1rem;
+  box-shadow: none;
+  background: #f0f3f6;
+  border: none;
+  border-radius: 4px 0px 0px 4px;
+  color: #717580;
+}
+
 @media only screen and (min-width: 768px) {
   .article-wrapper {
     max-width: 1200px;
@@ -128,8 +140,8 @@
 
   .form-layout {
     grid-template-areas:
-      "name phone"
-      "email propType"
+      "name name"
+      "phone email"
       "address address"
       "btnSubmit .";
     grid-template-columns: 1fr 1fr;

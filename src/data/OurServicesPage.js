@@ -3,26 +3,24 @@ export const serviceItems = [
     title: "Consulting",
     divClass: "consulting",
     image: "/images/ourservices/service-consulting.jpg",
+    imgAlt: "People in a meeting reviewing documents",
     description: [
       {
         subHeading: "",
         bullets: [
-          "You’re an investor looking to find out your rental options before purchasing the property",
-          "Curious to see how much a property can generate doing Short Term or Mid Term Rental?",
-          "Unsure of the by-laws and permit requirements for a certain property?",
-          "Unsure of the type of property and location that can get the highest return for your investment",
-          "Unsure of the occupancy rate and what’s the ROI on your property?",
-          "Contact us for a free GUIDE on how to get started and a free consultation.",
-          "A 5-10 page document providing a thorough market & rental analysis is available for $500. Includes full analysis of your local area, by-laws & zoning, major competitions, suggested pricing strategy, average occupancy and best rental options available. This fee will be given ack to you if you decide to hire us on as your property Short-Term or Mid-Term Co-Hosts/Management Team.",
+          "We help investors and homeowners understand their rental options before purchasing a property. You may be curious to see how much a property can generate doing Short Term or Mid Term Rental? Or you’re unsure of the by-laws and permit requirements for a certain property?",
+          "We can help consult on what are the best options for you based on the type of property, the local market and what’s happening in the industry.",
+          "Depending on your needs, after an initial complimentary call, we can produce a 5-10 page document providing a thorough market & rental analysis. This document includes full analysis of your local area, by-laws & zoning, major competitions, suggested pricing strategy, average occupancy and best rental options available. There’s a $500 fee. This fee will be given back to you if you decide to hire us on as your property Short-Term or Mid-Term Co-Hosts/Management Team.",
         ],
       },
     ],
+    pricing: "",
   },
   {
-    title:
-      "Account & Listing Set-up: $300 for Airbnb ($100 on additional platforms)",
+    title: "Account & Listing Set-up",
     divClass: "listing",
     image: "/images/ourservices/service-listing.jpg",
+    imgAlt: "Someone typing on a laptop",
     description: [
       {
         subHeading: "",
@@ -35,12 +33,14 @@ export const serviceItems = [
         ],
       },
     ],
+    pricing: "Fee: $300 for Airbnb ($100 on additional platforms)",
   },
   {
     title:
       "Co-hosting & Guests Management: 15-20% of revenue after cleaning fees",
     divClass: "management",
     image: "/images/ourservices/service-management.jpg",
+    imgAlt: "Townhouses",
     description: [
       {
         subHeading: "Online Management",
@@ -83,11 +83,13 @@ export const serviceItems = [
         bullets: ["Tracking of reservations & payout", "Tracking of expenses"],
       },
     ],
+    pricing: "Fee: 15-20% of revenue after cleaning fees",
   },
   {
     title: "Travel Coordination",
     divClass: "travel",
     image: "/images/ourservices/service-travel.jpg",
+    imgAlt: "Laptop and sunglasses on boardwalk by the beach",
     description: [
       {
         subHeading: "travel",
@@ -96,11 +98,14 @@ export const serviceItems = [
         ],
       },
     ],
+    pricing: "",
   },
   {
     title: "Financing",
     divClass: "financing",
     image: "/images/ourservices/service-financing.jpg",
+    imgAlt:
+      "Someone handing keys and miniature house to a person signing a contract",
     description: [
       {
         subHeading: "financing",
@@ -109,5 +114,6 @@ export const serviceItems = [
         ],
       },
     ],
+    pricing: "",
   },
 ];

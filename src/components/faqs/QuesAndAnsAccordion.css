@@ -1,5 +1,6 @@
 .qanda-text_ques {
   display: flex;
+  width: 100%;
   align-items: center;
   padding: 10px;
   border: solid #bababa;
@@ -9,6 +10,10 @@
   border-right-width: 0px;
   color: #333;
   text-decoration: none;
+  background: none;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .quesTxt {

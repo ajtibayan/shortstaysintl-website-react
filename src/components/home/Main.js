@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Autocomplete, useLoadScript } from "@react-google-maps/api";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PhoneInput from "react-phone-input-2";
 
 // Components and Styles
@@ -174,7 +173,7 @@ const Main = () => {
           <h3>Get a free rental analysis of your property</h3>
           <div className="main-form-container_input-container">
             <div className="main-form-container_location-input">
-              <FontAwesomeIcon icon="fa-location-dot" />
+              <i className="fa-solid fa-location-dot"></i>
               <Autocomplete
                 onPlaceChanged={onPlaceChanged}
                 onLoad={onLoad}
@@ -191,8 +190,8 @@ const Main = () => {
               </Autocomplete>
             </div>
             <div className="main-form-container_location-submit">
-              <button className="location-submit">
-                <FontAwesomeIcon icon="fa-arrow-right" />
+              <button className="location-submit" aria-label="Submit address">
+                <i className="fa-solid fa-arrow-right"></i>
               </button>
             </div>
           </div>
@@ -205,14 +204,14 @@ const Main = () => {
           onSubmit={handleFormSubmitFinal}
         >
           <div className="back-arrow-container">
-            <a
-              href="#"
+            <button
               className="back-arrow-container_link"
               onClick={handleFormBack}
+              aria-label="Back to address submit"
             >
-              <FontAwesomeIcon icon="fa-arrow-left" />
+              <i className="fa-solid fa-arrow-left"></i>
               <span>BACK</span>
-            </a>
+            </button>
           </div>
           <h2>Unlock your revenue potential</h2>
           <h3>{formattedAddress}</h3>
@@ -332,7 +331,12 @@ const Main = () => {
               name="address"
               value={formVals.address}
             />
-            <button className="userSubmit">Submit Request</button>
+            <button
+              className="userSubmit"
+              aria-label="Submit Rental Analysis Request Form"
+            >
+              Submit Request
+            </button>
             <p>
               I agree to receive email communications from Short Stays
               International as well as updates on workshops & rental news. You

@@ -26,7 +26,7 @@
   font-size: 1.2rem;
 }
 
-.topbar-mobile--social li a svg {
+.topbar-mobile--social li a i {
   color: #343434;
 }
 
@@ -44,6 +44,7 @@
 
 .header-mobile--logo {
   max-width: 150px;
+  height: auto;
 }
 
 .header-right {
@@ -52,7 +53,14 @@
   justify-content: flex-end;
 }
 
-.header-mobile--bars-icon svg {
+.header-mobile--bars-icon {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.header-mobile--bars-icon i {
+  margin-top: 2px;
   color: #343434;
   font-size: 1.8rem;
 }
@@ -91,11 +99,15 @@
   box-shadow: 2px 3px 3px rgb(0 0 0 / 10%);
 }
 
-.header-mobile-sidebar_close-sidebar a {
+.header-mobile-sidebar_close-sidebar button {
   display: inline-block;
   width: 45px;
   height: 45px;
   color: #11161f;
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .header-mobile-sidebar_menu-container {

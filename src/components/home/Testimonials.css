@@ -94,6 +94,7 @@
 .blockquote-media > * {
   box-sizing: border-box;
   width: 100%;
+  height: auto;
   border-radius: 0.5rem 0.5rem 0 0;
 }
 

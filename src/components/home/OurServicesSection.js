@@ -13,7 +13,7 @@ const OurServicesSection = () => {
   useEffect(() => {
     const fetchOurServicesContent = async () => {
       const response = await fetch(
-        "http://ajtibayan.com/shortstaysintl/api/homepage/ourServicesSection"
+        "https://ajtibayan.com/shortstaysintl/api/homepage/ourServicesSection"
       );
       const json = await response.json();
 
@@ -25,9 +25,9 @@ const OurServicesSection = () => {
     fetchOurServicesContent();
   }, []);
   return (
-    <section className="section-wrapper">
+    <section className="section-wrapper section-ourServices">
       <div className="heading-container">
-        <h2>Added benefits and management services</h2>
+        <h2>OUR SERVICES</h2>
         <h4>
           Extra services and tech that lead to happier guests, higher returns,
           and effortless vacation rental ownership for you.

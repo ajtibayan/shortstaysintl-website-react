@@ -48,10 +48,10 @@
   transition: all 0.35s;
 }
 
-.header-top_container--social li a span.header-social-icons svg {
+.header-top_container--social li a span.header-social-icons i {
   color: #737373;
   width: 1.2em;
-  margin-right: 6px;
+  margin-right: 3px;
   font-size: 1.2rem;
   transition: all 0.35s;
 }
@@ -115,6 +115,7 @@
 
 .header-content_container--logo {
   max-width: 140px;
+  height: auto;
   margin-right: 30px;
 }
 

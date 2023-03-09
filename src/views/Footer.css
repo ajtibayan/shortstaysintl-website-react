@@ -26,6 +26,7 @@
 
 .footer_container--logo {
   width: 100%;
+  height: auto;
 }
 
 .footer_container--col1-text {
@@ -77,12 +78,16 @@
   padding: 0.7rem 0.9rem;
 }
 
-.copywrite_container--social-icons svg {
+.copywrite_container--social-icons i {
   color: #717580;
 }
 
 .footer-form .input-name {
   margin-bottom: 8px;
+}
+
+.copywrite_container--text a {
+  margin-left: 5px;
 }
 
 @media only screen and (min-width: 768px) {

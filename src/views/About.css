@@ -22,6 +22,7 @@
 .about_our-story img {
   width: 590px;
   max-width: 100%;
+  height: auto;
   margin: 0 auto 25px;
   border-radius: 5px;
 }
@@ -44,6 +45,7 @@
 
 .about_our-mission img.our-mission-img {
   width: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
   border-radius: 5px;
@@ -92,6 +94,7 @@
 
 .about_our-values img {
   width: 80%;
+  height: auto;
   margin-bottom: 20px;
 }
 

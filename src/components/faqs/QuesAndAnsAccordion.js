@@ -36,10 +36,10 @@ const QuesAndAnsAccordion = ({ ques, ans }) => {
   };
   return (
     <div className="qanda-text_qanda">
-      <a href="#" className="qanda-text_ques" onClick={handleClick}>
+      <button className="qanda-text_ques" onClick={handleClick}>
         <i className={`fa-solid fa-${ansOpen ? "minus" : "plus"}`}></i>
         <span className="quesTxt">{ques}</span>
-      </a>
+      </button>
       <div className="qanda-text_ans">
         <div className="qanda-text_ans-content">
           <p dangerouslySetInnerHTML={{ __html: ans }} />

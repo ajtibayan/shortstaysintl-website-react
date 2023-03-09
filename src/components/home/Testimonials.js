@@ -9,7 +9,7 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchTestimonialsContent = async () => {
       const response = await fetch(
-        "http://ajtibayan.com/shortstaysintl/api/homepage/testimonialsSection"
+        "https://ajtibayan.com/shortstaysintl/api/homepage/testimonialsSection"
       );
       const json = await response.json();
 
@@ -34,14 +34,20 @@ const Testimonials = () => {
             mediaImg,
             quoteText,
             quoterName,
+            imgAlt,
           }) => {
             return (
               <div className={testimonialNum} key={_id}>
                 <blockquote className={blockquoteClass}>
                   <div className="blockquote-content">
-                    {mediaImg != "" && (
+                    {mediaImg !== "" && (
                       <div className="blockquote-media">
-                        <img src={mediaImg} />
+                        <img
+                          src={mediaImg}
+                          width={710}
+                          height={838}
+                          alt={imgAlt}
+                        />
                       </div>
                     )}
 

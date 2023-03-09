@@ -10,12 +10,22 @@ const Marketed = () => {
         <h2>Get marketed across the top listing websites</h2>
       </div>
       <div className="listing-websites-logos">
-        <a href="#" className="grid-logo logo-airbnb">
-          <img src="/images/Airbnb_Logo.png" alt="" />
-        </a>
-        <a href="#" className="grid-logo logo-vrbo">
-          <img src="/images/Vrbo_Logo.png" alt="" />
-        </a>
+        <div className="grid-logo logo-airbnb">
+          <img
+            src="/images/Airbnb_Logo.png"
+            width={300}
+            height={94}
+            alt="Airbnb logo"
+          />
+        </div>
+        <div className="grid-logo logo-vrbo">
+          <img
+            src="/images/Vrbo_Logo.png"
+            width={300}
+            height={96}
+            alt="Vrbo logo"
+          />
+        </div>
       </div>
     </section>
   );

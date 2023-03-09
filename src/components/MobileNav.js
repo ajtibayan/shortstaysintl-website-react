@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Components and Styles
 import "./MobileNav.css";
-
-// Assets
-// import { mainNav } from "../data/Navigation";
 
 const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
   const [socialMedia, setSocialMedia] = useState([]);
@@ -15,7 +11,7 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
   useEffect(() => {
     const fetchNavigationContent = async () => {
       const response = await fetch(
-        "http://ajtibayan.com/shortstaysintl/api/navigation"
+        "https://ajtibayan.com/shortstaysintl/api/navigation"
       );
       const json = await response.json();
 
@@ -35,8 +31,13 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
             {socialMedia.map(({ hrefLink, faIcon, name }) => {
               return (
                 <li key={name}>
-                  <a href={hrefLink}>
-                    <FontAwesomeIcon icon={faIcon} />
+                  <a
+                    href={hrefLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Check out our ${name} profile`}
+                  >
+                    <i className={faIcon}></i>
                   </a>
                 </li>
               );
@@ -44,15 +45,21 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
           </ul>
         </div>
         <div className="topbar-mobile--right">
-          <a href="#">
+          {/* <a href="#">
             <FontAwesomeIcon icon="fa-circle-user" />
-          </a>
+          </a> */}
         </div>
       </div>
       <div className="header-mobile-content">
         <div className="header-left">
           <Link to="/">
-            <img src="/images/4.png" className="header-mobile--logo" />
+            <img
+              src="/images/4.png"
+              className="header-mobile--logo"
+              alt="Short Stays International logo"
+              width={375}
+              height={139}
+            />
           </Link>
         </div>
         <div className="header-right">
@@ -61,22 +68,25 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
               Book With Us
             </Link>
           </div>
-          <a
-            href="#"
+          <button
             className="header-mobile--bars-icon"
             onClick={handleMainMenuClick}
+            aria-label="Open mobile menu"
           >
-            <FontAwesomeIcon icon="fa-bars" />
-          </a>
+            <i className="fa-solid fa-bars"></i>
+          </button>
           <div
             className={`header-mobile-sidebar ${
               sidebarVisibility ? "open" : ""
             }`}
           >
             <div className="header-mobile-sidebar_close-sidebar">
-              <a href="#" onClick={handleMainMenuClick}>
-                <FontAwesomeIcon icon="fa-times-circle" />
-              </a>
+              <button
+                onClick={handleMainMenuClick}
+                aria-label="Close mobile menu"
+              >
+                <i className="fa-solid fa-times-circle"></i>
+              </button>
             </div>
             <div className="header-mobile-sidebar_menu-container">
               <ul className="mobile-main-menu">

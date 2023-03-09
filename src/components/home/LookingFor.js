@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Components and Styles
 import "./LookingFor.css";
-
-// Assets
-// import { lookingForContent } from "../../data/LookingForSection";
 
 const LookingFor = () => {
   const [lookingForContent, setLookingForContent] = useState([]);
@@ -13,7 +9,7 @@ const LookingFor = () => {
   useEffect(() => {
     const fetchLookingForContent = async () => {
       const response = await fetch(
-        "http://ajtibayan.com/shortstaysintl/api/homepage/lookingForSection"
+        "https://ajtibayan.com/shortstaysintl/api/homepage/lookingForSection"
       );
       const json = await response.json();
 
@@ -34,7 +30,7 @@ const LookingFor = () => {
               <div className="box-container">
                 <div className="box-wrapper">
                   <div className="box-wrapper_icon-container">
-                    <FontAwesomeIcon icon={faIcon} />
+                    <i className={faIcon}></i>
                   </div>
                   <div className="box-wrapper_text-container">
                     <h3>{heading}</h3>

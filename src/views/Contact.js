@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Autocomplete, useLoadScript } from "@react-google-maps/api";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PhoneInput from "react-phone-input-2";
 
 // Components and Styles
@@ -12,52 +10,36 @@ import "./Contact.css";
 import SubBanner from "../components/SubBanner";
 import Footer from "./Footer";
 
-// Assets
-import { socialMedia, mainNav } from "../data/Navigation";
-
-const placesLibrary = ["places"];
-
 const Contact = () => {
   const location = useLocation(),
-    locationRef = useRef(),
+    [socialMedia, setSocialMedia] = useState([]),
     form = useRef(),
-    [searchResult, setSearchResult] = useState("Result: none"),
     initValue = {
       name: "",
       phone: "",
       email: "",
-      propType: "",
-      address: "",
+      message: "",
       contactFormType: "cpForm",
     },
     [formVals, setFormVals] = useState(initValue),
     [formErrs, setFormErrs] = useState({}),
     [isSubmit, setIsSubmit] = useState(false),
-    [isSent, setIsSent] = useState(false),
-    restrictions = {
-      country: "ca",
-    },
-    options = {
-      strictBounds: true,
+    [isSent, setIsSent] = useState(false);
+
+  useEffect(() => {
+    const fetchNavigationContent = async () => {
+      const response = await fetch(
+        "http://ajtibayan.com/shortstaysintl/api/navigation"
+      );
+      const json = await response.json();
+
+      if (response.ok) {
+        setSocialMedia(json[0].socialMedia);
+      }
     };
 
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
-    libraries: placesLibrary,
-  });
-
-  function onLoad(autocomplete) {
-    setSearchResult(autocomplete);
-  }
-
-  function onPlaceChanged() {
-    if (searchResult != null) {
-      const place = searchResult.getPlace();
-      setFormVals({ ...formVals, address: place.formatted_address });
-    } else {
-      alert("Please enter text");
-    }
-  }
+    fetchNavigationContent();
+  }, []);
 
   useEffect(() => {
     if (Object.keys(formErrs).length === 0 && isSubmit) {
@@ -103,10 +85,6 @@ const Contact = () => {
     }
   }, [isSent]);
 
-  if (!isLoaded) {
-    return <div>Loading...</div>;
-  }
-
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormVals({ ...formVals, [id]: value });
@@ -124,8 +102,8 @@ const Contact = () => {
 
     if (!vals.name) {
       errors.name = "Name is required!";
-    } else if (vals.name.length < 4) {
-      errors.name = "Enter at least 4 characters!";
+    } else if (vals.name.length < 2) {
+      errors.name = "Enter at least 2 characters!";
     }
 
     if (!vals.email) {
@@ -159,15 +137,20 @@ const Contact = () => {
                   </a>
                 </li>
                 <li>
-                  Call: <a href="tel:1800-000-0000">1800-000-0000</a>
+                  Call: <a href="tel:647-886-0758">647-886-0758</a>
                 </li>
               </ul>
               <div className="copywrite_container--social">
                 {socialMedia.map(({ id, hrefLink, faIcon }) => {
                   return (
-                    <a href={hrefLink} key={id}>
+                    <a
+                      href={hrefLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      key={id}
+                    >
                       <span className="copywrite_container--social-icons">
-                        <FontAwesomeIcon icon={faIcon} />
+                        <i className={faIcon}></i>
                       </span>
                     </a>
                   );
@@ -263,44 +246,16 @@ const Contact = () => {
                     </motion.p>
                   )}
                 </div>
-                <div className="input-propType">
-                  <input
-                    className="input-text user-text-field"
-                    type="text"
-                    placeholder="Property Type"
-                    id="propType"
-                    name="propType"
-                    required
-                    value={formVals.propType}
+                <div className="input-address">
+                  <textarea
+                    className="input-textarea"
+                    id="message"
+                    name="message"
+                    rows="10"
+                    placeholder="Your Message"
+                    value={formVals.message}
                     onChange={handleChange}
                   />
-                  {formErrs.propType && (
-                    <motion.p
-                      className="error"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.6, ease: "easeInOut" }}
-                    >
-                      {formErrs.propType}
-                    </motion.p>
-                  )}
-                </div>
-                <div className="input-address">
-                  <Autocomplete
-                    onPlaceChanged={onPlaceChanged}
-                    onLoad={onLoad}
-                    restrictions={restrictions}
-                    options={options}
-                  >
-                    <input
-                      ref={locationRef}
-                      className="input-text user-text-field"
-                      type="text"
-                      placeholder="Property address"
-                      name="address"
-                      id="address"
-                    />
-                  </Autocomplete>
                 </div>
                 <div className="input-btnSubmit">
                   <button className="cpSubmit" type="submit" value="submit">

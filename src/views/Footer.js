@@ -1,18 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Components and Styles
 import "./Footer.css";
 
-// Assets
-import { socialMedia, mainNav } from "../data/Navigation";
-
 const Footer = () => {
   const curDate = new Date(),
     form = useRef(),
-    [searchResult, setSearchResult] = useState("Result: none"),
+    [socialMedia, setSocialMedia] = useState([]),
+    [mainNav, setMainNav] = useState([]),
     initValue = {
       name: "",
       email: "",
@@ -25,11 +22,27 @@ const Footer = () => {
   let year = curDate.getFullYear();
 
   useEffect(() => {
+    const fetchNavigationContent = async () => {
+      const response = await fetch(
+        "https://ajtibayan.com/shortstaysintl/api/navigation"
+      );
+      const json = await response.json();
+
+      if (response.ok) {
+        setSocialMedia(json[0].socialMedia);
+        setMainNav(json[1].mainNav);
+      }
+    };
+
+    fetchNavigationContent();
+  }, []);
+
+  useEffect(() => {
     if (Object.keys(formErrs).length === 0 && isSubmit) {
       // console.log(formVals);
       const sendFormEmail = async () => {
         const response = await fetch(
-          "http://ajtibayan.com/shortstaysintl/contactform",
+          "https://ajtibayan.com/shortstaysintl/contactform",
           {
             method: "POST",
             body: JSON.stringify(formVals),
@@ -85,8 +98,8 @@ const Footer = () => {
 
     if (!vals.name) {
       errors.name = "Name is required!";
-    } else if (vals.name.length < 4) {
-      errors.name = "Enter at least 4 characters!";
+    } else if (vals.name.length < 2) {
+      errors.name = "Enter at least 2 characters!";
     }
 
     if (!vals.email) {
@@ -104,7 +117,13 @@ const Footer = () => {
         <div className="footer_container">
           <div className="footer_container--col1">
             <Link to="/" className="footer_container--logo-link">
-              <img src="/images/4.png" className="footer_container--logo" />
+              <img
+                src="/images/4.png"
+                className="footer_container--logo"
+                alt="Short Stays International logo"
+                width={375}
+                height={139}
+              />
             </Link>
             <div className="footer_container--col1-text">
               <p>
@@ -117,9 +136,9 @@ const Footer = () => {
             <div className="footer_container--col-wrapper">
               <h3 className="footer_container--h3">Explore</h3>
               <ul className="footer_container--footer-menu">
-                {mainNav.map(({ id, linkTo, linkName }) => {
+                {mainNav.map(({ id, linkTo, linkName }, index) => {
                   return (
-                    <li key={id}>
+                    <li key={index}>
                       <Link to={linkTo}>{linkName}</Link>
                     </li>
                   );
@@ -204,14 +223,29 @@ const Footer = () => {
       <section className="copywrite">
         <div className="copywrite_container">
           <div className="copywrite_container--text">
-            <p>&copy; Copyright {year} Short Stays International</p>
+            <p>
+              &copy; Copyright {year} Short Stays International. Developed by
+              <a
+                href="http://www.ajtibayan.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                A.J. Tibayan
+              </a>
+            </p>
           </div>
           <div className="copywrite_container--social">
-            {socialMedia.map(({ id, hrefLink, faIcon }) => {
+            {socialMedia.map(({ hrefLink, faIcon, name }, index) => {
               return (
-                <a href={hrefLink} key={id}>
+                <a
+                  href={hrefLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Check out our ${name} profile`}
+                  key={index}
+                >
                   <span className="copywrite_container--social-icons">
-                    <FontAwesomeIcon icon={faIcon} />
+                    <i className={faIcon}></i>
                   </span>
                 </a>
               );

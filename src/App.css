@@ -5,6 +5,8 @@ html {
 :root {
   --bs-stroke: 0.0625rem;
   --bs-color: #241c15;
+  --brand-blue: #4375f4;
+  --brand-gold: #fdcb34;
 }
 
 body {

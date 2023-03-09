@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Components and Styles
 import "./DeskTopNav.css";
-
-// Assets
-// import { socialMedia, mainNav } from "../data/Navigation";
 
 const DeskTopNav = ({ scrollTop, url }) => {
   const [socialMedia, setSocialMedia] = useState([]);
@@ -15,7 +11,7 @@ const DeskTopNav = ({ scrollTop, url }) => {
   useEffect(() => {
     const fetchNavigationContent = async () => {
       const response = await fetch(
-        "http://ajtibayan.com/shortstaysintl/api/navigation"
+        "https://ajtibayan.com/shortstaysintl/api/navigation"
       );
       const json = await response.json();
 
@@ -30,7 +26,7 @@ const DeskTopNav = ({ scrollTop, url }) => {
   return (
     <div
       className={`header-main${scrollTop >= 40 ? " isFixed" : ""}${
-        url != "/" ? " subPg" : ""
+        url !== "/" ? " subPg" : ""
       }`}
     >
       <div className="header-top">
@@ -40,9 +36,14 @@ const DeskTopNav = ({ scrollTop, url }) => {
               {socialMedia.map(({ hrefLink, faIcon, name }) => {
                 return (
                   <li key={name}>
-                    <a href={hrefLink}>
+                    <a
+                      href={hrefLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Check out our ${name} profile`}
+                    >
                       <span className="header-social-icons">
-                        <FontAwesomeIcon icon={faIcon} />
+                        <i className={faIcon}></i>
                       </span>
                       <span className="header-social-text">{name}</span>
                     </a>
@@ -65,6 +66,9 @@ const DeskTopNav = ({ scrollTop, url }) => {
               <img
                 src="/images/4.png"
                 className="header-content_container--logo"
+                alt="Short Stays International logo"
+                width={375}
+                height={139}
               />
             </Link>
           </div>

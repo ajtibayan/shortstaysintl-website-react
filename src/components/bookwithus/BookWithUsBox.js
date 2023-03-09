@@ -18,7 +18,7 @@ const BookWithUsBox = ({
       </div>
       <div className="flex item-btn_container">
         {btnText === "Check Our Listings" ? (
-          <a href={btnUrl} target="_blank" className="btn">
+          <a href={btnUrl} target="_blank" rel="noreferrer" className="btn">
             {btnText}
           </a>
         ) : (
