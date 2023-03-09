@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter, HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import ReactGA from "react-ga4";
 import ScrollToTop from "./components/ScrollToTop";
@@ -11,10 +11,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 ReactGA.initialize("G-EW96LDSEPK");
 root.render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <ScrollToTop />
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
