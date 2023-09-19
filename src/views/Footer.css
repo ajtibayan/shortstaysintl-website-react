@@ -18,17 +18,6 @@
   width: 100%;
 }
 
-.footer_container--logo-link {
-  display: inline-block;
-  max-width: 150px;
-  margin-bottom: 30px;
-}
-
-.footer_container--logo {
-  width: 100%;
-  height: auto;
-}
-
 .footer_container--col1-text {
   margin-bottom: 32px;
   line-height: 32px;

@@ -18,21 +18,24 @@ import Contact from "./views/Contact";
 import BookWithUs from "./views/BookWithUs";
 import ErrorPage from "./views/ErrorPage";
 import "./App.css";
+import { NavProvider } from "./NavContext";
 
 // library.add(fas, faTwitter, faSquareFacebook, faLinkedin, faInstagram);
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/About" element={<About />} />
-      <Route path="/OurServices" element={<OurServices />} />
-      <Route path="/TrainingAndCoaching" element={<TrainingAndCoaching />} />
-      <Route path="/FAQs" element={<FAQs />} />
-      <Route path="/Contact" element={<Contact />} />
-      <Route path="/BookWithUs" element={<BookWithUs />} />
-      <Route path="/*" element={<ErrorPage />} />
-    </Routes>
+    <NavProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/OurServices" element={<OurServices />} />
+        <Route path="/TrainingAndCoaching" element={<TrainingAndCoaching />} />
+        <Route path="/FAQs" element={<FAQs />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/BookWithUs" element={<BookWithUs />} />
+        <Route path="/*" element={<ErrorPage />} />
+      </Routes>
+    </NavProvider>
   );
 }
 

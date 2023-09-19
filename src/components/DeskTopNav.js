@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useNav } from "../NavContext";
 
 // Components and Styles
 import "./DeskTopNav.css";
@@ -7,24 +8,8 @@ import SocialIconsNav from "./SocialIconsNav";
 import MainLogo from "./MainLogo";
 
 const DeskTopNav = ({ scrollTop, url }) => {
-  const [socialMedia, setSocialMedia] = useState([]);
-  const [mainNav, setMainNav] = useState([]);
+  const { socialMedia, mainNav } = useNav();
 
-  useEffect(() => {
-    const fetchNavigationContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/navigation"
-      );
-      const json = await response.json();
-
-      if (response.ok) {
-        setSocialMedia(json[0].socialMedia);
-        setMainNav(json[1].mainNav);
-      }
-    };
-
-    fetchNavigationContent();
-  }, []);
   return (
     <div
       className={`header-main${scrollTop >= 40 ? " isFixed" : ""}${

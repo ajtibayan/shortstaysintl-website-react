@@ -1,26 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useNav } from "../NavContext";
 
 // Components and Styles
 import "./MobileTopBar.css";
 import SocialIconsNav from "./SocialIconsNav";
 
 const MobileTopBar = () => {
-  const [socialMedia, setSocialMedia] = useState([]);
-
-  useEffect(() => {
-    const fetchNavigationContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/navigation"
-      );
-      const json = await response.json();
-
-      if (response.ok) {
-        setSocialMedia(json[0].socialMedia);
-      }
-    };
-
-    fetchNavigationContent();
-  }, []);
+  const { socialMedia } = useNav();
   return (
     <div className="topbar-mobile">
       <ul className="topbar-mobile--social">

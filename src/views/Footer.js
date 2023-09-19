@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useNav } from "../NavContext";
 
 // Components and Styles
 import "./Footer.css";
@@ -8,10 +9,9 @@ import SocialIconsNav from "../components/SocialIconsNav";
 import MainLogo from "../components/MainLogo";
 
 const Footer = () => {
+  const { socialMedia, mainNav } = useNav();
   const curDate = new Date(),
     form = useRef(),
-    [socialMedia, setSocialMedia] = useState([]),
-    [mainNav, setMainNav] = useState([]),
     initValue = {
       name: "",
       email: "",
@@ -22,22 +22,6 @@ const Footer = () => {
     [isSubmit, setIsSubmit] = useState(false),
     [isSent, setIsSent] = useState(false);
   let year = curDate.getFullYear();
-
-  useEffect(() => {
-    const fetchNavigationContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/navigation"
-      );
-      const json = await response.json();
-
-      if (response.ok) {
-        setSocialMedia(json[0].socialMedia);
-        setMainNav(json[1].mainNav);
-      }
-    };
-
-    fetchNavigationContent();
-  }, []);
 
   useEffect(() => {
     if (Object.keys(formErrs).length === 0 && isSubmit) {

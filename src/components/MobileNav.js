@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { useNav } from "../NavContext";
 
 // Components and Styles
 import "./MobileNav.css";
@@ -7,22 +8,7 @@ import MobileTopBar from "./MobileTopBar";
 import MainLogo from "./MainLogo";
 
 const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
-  const [mainNav, setMainNav] = useState([]);
-
-  useEffect(() => {
-    const fetchNavigationContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/navigation"
-      );
-      const json = await response.json();
-
-      if (response.ok) {
-        setMainNav(json[1].mainNav);
-      }
-    };
-
-    fetchNavigationContent();
-  }, []);
+  const { mainNav } = useNav();
   return (
     <div className="header-mobile">
       <MobileTopBar />
