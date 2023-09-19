@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 // Components and Styles
 import "./Footer.css";
+import SocialIconsNav from "../components/SocialIconsNav";
 
 const Footer = () => {
   const curDate = new Date(),
@@ -234,23 +235,17 @@ const Footer = () => {
               </a>
             </p>
           </div>
-          <div className="copywrite_container--social">
-            {socialMedia.map(({ hrefLink, faIcon, name }, index) => {
+          <ul className="copywrite_container--social">
+            {socialMedia.map((smNavInfo, index) => {
               return (
-                <a
-                  href={hrefLink}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Check out our ${name} profile`}
-                  key={index}
-                >
+                <SocialIconsNav {...smNavInfo} key={index}>
                   <span className="copywrite_container--social-icons">
-                    <i className={faIcon}></i>
+                    <i className={smNavInfo.faIcon}></i>
                   </span>
-                </a>
+                </SocialIconsNav>
               );
             })}
-          </div>
+          </ul>
         </div>
       </section>
     </>

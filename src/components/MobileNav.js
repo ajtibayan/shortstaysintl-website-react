@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // Components and Styles
 import "./MobileNav.css";
+import SocialIconsNav from "./SocialIconsNav";
 
 const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
   const [socialMedia, setSocialMedia] = useState([]);
@@ -28,18 +29,11 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
       <div className="topbar-mobile">
         <div className="topbar-mobile--left">
           <ul className="topbar-mobile--social">
-            {socialMedia.map(({ hrefLink, faIcon, name }) => {
+            {socialMedia.map((smNavInfo) => {
               return (
-                <li key={name}>
-                  <a
-                    href={hrefLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`Check out our ${name} profile`}
-                  >
-                    <i className={faIcon}></i>
-                  </a>
-                </li>
+                <SocialIconsNav {...smNavInfo}>
+                  <i className={smNavInfo.faIcon}></i>
+                </SocialIconsNav>
               );
             })}
           </ul>

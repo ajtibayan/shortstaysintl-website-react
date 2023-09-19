@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // Components and Styles
 import "./DeskTopNav.css";
+import SocialIconsNav from "./SocialIconsNav";
 
 const DeskTopNav = ({ scrollTop, url }) => {
   const [socialMedia, setSocialMedia] = useState([]);
@@ -33,21 +34,14 @@ const DeskTopNav = ({ scrollTop, url }) => {
         <div className="header-top_container">
           <div className="header-top_container--left">
             <ul className="header-top_container--social">
-              {socialMedia.map(({ hrefLink, faIcon, name }) => {
+              {socialMedia.map((smNavInfo) => {
                 return (
-                  <li key={name}>
-                    <a
-                      href={hrefLink}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`Check out our ${name} profile`}
-                    >
-                      <span className="header-social-icons">
-                        <i className={faIcon}></i>
-                      </span>
-                      <span className="header-social-text">{name}</span>
-                    </a>
-                  </li>
+                  <SocialIconsNav {...smNavInfo}>
+                    <span className="header-social-icons">
+                      <i className={smNavInfo.faIcon}></i>
+                    </span>
+                    <span className="header-social-text">{smNavInfo.name}</span>
+                  </SocialIconsNav>
                 );
               })}
             </ul>
