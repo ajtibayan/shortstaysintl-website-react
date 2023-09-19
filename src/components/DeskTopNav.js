@@ -36,7 +36,7 @@ const DeskTopNav = ({ scrollTop, url }) => {
             <ul className="header-top_container--social">
               {socialMedia.map((smNavInfo) => {
                 return (
-                  <SocialIconsNav {...smNavInfo}>
+                  <SocialIconsNav {...smNavInfo} key={smNavInfo.name}>
                     <span className="header-social-icons">
                       <i className={smNavInfo.faIcon}></i>
                     </span>

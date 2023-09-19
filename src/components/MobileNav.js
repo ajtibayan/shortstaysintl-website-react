@@ -31,7 +31,7 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
           <ul className="topbar-mobile--social">
             {socialMedia.map((smNavInfo) => {
               return (
-                <SocialIconsNav {...smNavInfo}>
+                <SocialIconsNav {...smNavInfo} key={smNavInfo.name}>
                   <i className={smNavInfo.faIcon}></i>
                 </SocialIconsNav>
               );

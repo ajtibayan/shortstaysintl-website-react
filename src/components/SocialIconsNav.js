@@ -5,7 +5,7 @@ import "./SocialIconsNav.css";
 
 const SocialIconsNav = ({ hrefLink, name, children }) => {
   return (
-    <li key={name}>
+    <li>
       <a
         href={hrefLink}
         target="_blank"
