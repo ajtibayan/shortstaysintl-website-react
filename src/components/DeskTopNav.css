@@ -34,28 +34,6 @@
   align-items: center;
 }
 
-.header-top_container--social li {
-  list-style: none;
-  margin-right: 20px;
-}
-
-.header-top_container--social li a {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #737373;
-  font-weight: bold;
-  transition: all 0.35s;
-}
-
-.header-top_container--social li a span.header-social-icons i {
-  color: #737373;
-  width: 1.2em;
-  margin-right: 3px;
-  font-size: 1.2rem;
-  transition: all 0.35s;
-}
-
 .header-social-text {
   font-size: 0.9rem;
 }

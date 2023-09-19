@@ -20,16 +20,6 @@
   display: flex;
 }
 
-.topbar-mobile--social li {
-  list-style: none;
-  margin-right: 12px;
-  font-size: 1.2rem;
-}
-
-.topbar-mobile--social li a i {
-  color: #343434;
-}
-
 .topbar-mobile--right a svg {
   color: #343434;
   font-size: 1.5rem;

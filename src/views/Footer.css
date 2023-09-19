@@ -71,17 +71,6 @@
   margin-top: 10px;
 }
 
-.copywrite_container--social li {
-  display: inline-block;
-  background-color: #eff1f6;
-  margin: 0 10px 0 0;
-  padding: 0.7rem 0.9rem;
-}
-
-.copywrite_container--social-icons i {
-  color: #717580;
-}
-
 .footer-form .input-name {
   margin-bottom: 8px;
 }
