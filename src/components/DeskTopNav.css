@@ -38,17 +38,6 @@
   font-size: 0.9rem;
 }
 
-.header-top_container--social li a:hover,
-.header-top_container--social li a:hover span.header-social-icons svg {
-  color: #343434;
-}
-
-.header-top_container--right {
-  width: 50%;
-  display: flex;
-  justify-content: end;
-}
-
 .header-content {
   width: 100%;
   padding: 0 40px;
@@ -80,21 +69,10 @@
   background: #fff;
 }
 
-.header-content_container--left {
-  display: flex;
-  align-items: center;
-}
-
 .header-content_container--right {
   display: flex;
   justify-content: space-between;
   width: 100%;
-}
-
-.header-content_container--logo {
-  max-width: 140px;
-  height: auto;
-  margin-right: 30px;
 }
 
 .header-content_container--main-menu {

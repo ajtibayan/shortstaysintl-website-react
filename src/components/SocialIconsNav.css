@@ -30,6 +30,11 @@
   transition: all 0.35s;
 }
 
+.header-top_container--social li a:hover,
+.header-top_container--social li a:hover span.header-social-icons svg {
+  color: #343434;
+}
+
 .copywrite_container--social li {
   display: inline-block;
   background-color: #eff1f6;

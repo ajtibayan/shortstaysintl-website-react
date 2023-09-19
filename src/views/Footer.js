@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 // Components and Styles
 import "./Footer.css";
 import SocialIconsNav from "../components/SocialIconsNav";
+import MainLogo from "../components/MainLogo";
 
 const Footer = () => {
   const curDate = new Date(),
@@ -117,15 +118,7 @@ const Footer = () => {
       <footer className="footer">
         <div className="footer_container">
           <div className="footer_container--col1">
-            <Link to="/" className="footer_container--logo-link">
-              <img
-                src="/images/4.png"
-                className="footer_container--logo"
-                alt="Short Stays International logo"
-                width={375}
-                height={139}
-              />
-            </Link>
+            <MainLogo />
             <div className="footer_container--col1-text">
               <p>
                 Talk to one of our short-term rental management pros to help you

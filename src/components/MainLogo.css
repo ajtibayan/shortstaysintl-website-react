@@ -1,0 +1,27 @@
+.mainLogo img {
+  height: auto;
+}
+
+.header-mobile-content .mainLogo img {
+  max-width: 150px;
+}
+
+.header-content_container .mainLogo {
+  display: flex;
+  align-items: center;
+}
+
+.header-content_container .mainLogo img {
+  max-width: 140px;
+  margin-right: 30px;
+}
+
+.footer_container .mainLogo {
+  display: inline-block;
+  max-width: 150px;
+  margin-bottom: 30px;
+}
+
+.footer_container .mainLogo img {
+  width: 100%;
+}

@@ -1,40 +1,8 @@
-.topbar-mobile {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 15px;
-  border-bottom: 1px solid #737373;
-  background-color: #ffde59;
-}
-
-.topbar-mobile--left {
-  /* width: 50%; */
-}
-
-.topbar-mobile--right {
-  /* width: 50%; */
-  display: flex;
-  justify-content: end;
-}
-
-.topbar-mobile--social {
-  display: flex;
-}
-
-.topbar-mobile--right a svg {
-  color: #343434;
-  font-size: 1.5rem;
-}
-
 .header-mobile-content {
   display: flex;
   justify-content: space-between;
   padding: 10px 20px;
   background-color: #ffde59;
-}
-
-.header-mobile--logo {
-  max-width: 150px;
-  height: auto;
 }
 
 .header-right {
@@ -146,10 +114,6 @@
 }
 
 @media only screen and (min-width: 800px) {
-  .topbar-mobile {
-    padding: 5px 30px;
-  }
-
   .header-mobile-content {
     padding: 10px 30px;
   }
