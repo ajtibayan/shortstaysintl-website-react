@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useNav } from "../NavContext";
+import { useNav } from "../context/NavContext";
 
 // Components and Styles
 import "./Footer.css";

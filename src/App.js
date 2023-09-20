@@ -18,7 +18,7 @@ import Contact from "./views/Contact";
 import BookWithUs from "./views/BookWithUs";
 import ErrorPage from "./views/ErrorPage";
 import "./App.css";
-import { NavProvider } from "./NavContext";
+import { NavProvider } from "./context/NavContext";
 
 // library.add(fas, faTwitter, faSquareFacebook, faLinkedin, faInstagram);
 

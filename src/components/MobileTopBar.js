@@ -1,5 +1,5 @@
 import React from "react";
-import { useNav } from "../NavContext";
+import { useNav } from "../context/NavContext";
 
 // Components and Styles
 import "./MobileTopBar.css";
