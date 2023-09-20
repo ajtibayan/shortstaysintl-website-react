@@ -35,18 +35,20 @@
 .blockquote.emphasized .blockquote-content {
   background-color: #fff;
   box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 10%);
-  transition: box-shadow 0.2s ease-in-out, -webkit-box-shadow 0.2s ease-in-out;
+  transition:
+    box-shadow 0.2s ease-in-out,
+    -webkit-box-shadow 0.2s ease-in-out;
   font-size: 1.5rem;
 }
 
-.blockquote p {
+/* .blockquote p {
   position: relative;
   line-height: 1.4;
 }
 
 .section-wrapper .blockquote p {
   margin-top: 0;
-}
+} */
 
 .blockquote p:before {
   content: "";

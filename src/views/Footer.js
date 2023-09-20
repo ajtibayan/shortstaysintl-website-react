@@ -35,7 +35,7 @@ const Footer = () => {
             headers: {
               "Content-Type": "application/json",
             },
-          }
+          },
         );
 
         const json = await response.json();
@@ -141,7 +141,7 @@ const Footer = () => {
               )}
               <form
                 ref={form}
-                className="flex flex-column footer-form"
+                className="flex-column footer-form flex"
                 onSubmit={handleSubmit}
               >
                 <div className="input-name">

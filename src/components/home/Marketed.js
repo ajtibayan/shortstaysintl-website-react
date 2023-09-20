@@ -7,7 +7,9 @@ const Marketed = () => {
   return (
     <section className="section-wrapper section-marketed">
       <div className="heading-container marketed-title">
-        <h2>Get marketed across the top listing websites</h2>
+        <h2 className="mb-4 text-4xl font-bold">
+          Get marketed across the top listing websites
+        </h2>
       </div>
       <div className="listing-websites-logos">
         <div className="grid-logo logo-airbnb">

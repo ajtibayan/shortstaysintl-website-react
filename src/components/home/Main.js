@@ -68,7 +68,7 @@ const Main = () => {
             headers: {
               "Content-Type": "application/json",
             },
-          }
+          },
         );
 
         const json = await response.json();
@@ -169,8 +169,12 @@ const Main = () => {
           }`}
           onSubmit={handleFormSubmit}
         >
-          <h1>Discover full-service short-term rental management</h1>
-          <h3>Get a free rental analysis of your property</h3>
+          <h1 className="mx-0 mb-10 mt-5 block w-full text-4xl font-bold lg:mb-12 lg:mt-0 lg:w-4/5 lg:text-7xl">
+            Discover full-service short-term rental management
+          </h1>
+          <h3 className="mb-9 font-bold lg:mb-8 lg:text-xl">
+            Get a free rental analysis of your property
+          </h3>
           <div className="main-form-container_input-container">
             <div className="main-form-container_location-input">
               <i className="fa-solid fa-location-dot"></i>

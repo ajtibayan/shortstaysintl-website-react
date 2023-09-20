@@ -13,7 +13,7 @@ const OurServicesSection = () => {
   useEffect(() => {
     const fetchOurServicesContent = async () => {
       const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/homepage/ourServicesSection"
+        "https://ajtibayan.com/shortstaysintl/api/homepage/ourServicesSection",
       );
       const json = await response.json();
 
@@ -27,8 +27,8 @@ const OurServicesSection = () => {
   return (
     <section className="section-wrapper section-ourServices">
       <div className="heading-container">
-        <h2>OUR SERVICES</h2>
-        <h4>
+        <h2 className="mb-4 text-4xl font-bold">OUR SERVICES</h2>
+        <h4 className="text-base font-bold">
           Extra services and tech that lead to happier guests, higher returns,
           and effortless vacation rental ownership for you.
         </h4>

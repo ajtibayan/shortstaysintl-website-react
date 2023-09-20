@@ -33,16 +33,6 @@
   text-align: center;
 }
 
-.box-wrapper_text-container h3 {
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-  color: #282f44;
-}
-
-.box-wrapper_text-container p {
-  color: #717580;
-}
-
 @media only screen and (min-width: 768px) {
   .box-wrapper {
     flex-direction: row;

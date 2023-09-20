@@ -9,7 +9,7 @@ const LookingFor = () => {
   useEffect(() => {
     const fetchLookingForContent = async () => {
       const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/homepage/lookingForSection"
+        "https://ajtibayan.com/shortstaysintl/api/homepage/lookingForSection",
       );
       const json = await response.json();
 
@@ -33,8 +33,10 @@ const LookingFor = () => {
                     <i className={faIcon}></i>
                   </div>
                   <div className="box-wrapper_text-container">
-                    <h3>{heading}</h3>
-                    <p>{text}</p>
+                    <h3 className="mb-4 text-2xl font-bold text-[#282f44]">
+                      {heading}
+                    </h3>
+                    <p className="text-[#717580]">{text}</p>
                   </div>
                 </div>
               </div>
