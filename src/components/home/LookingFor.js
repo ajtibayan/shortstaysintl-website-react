@@ -2,19 +2,24 @@ import React, { useState, useEffect } from "react";
 
 // Components and Styles
 import "./LookingFor.css";
+import { lookingForContent as lfcLocal } from "../../data/LookingForSection";
 
 const LookingFor = () => {
   const [lookingForContent, setLookingForContent] = useState([]);
 
   useEffect(() => {
     const fetchLookingForContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/homepage/lookingForSection"
-      );
-      const json = await response.json();
+      try {
+        const response = await fetch(
+          "https://ajtibayan.com/shortstaysintl/api/homepage/lookingForSection"
+        );
+        const json = await response.json();
 
-      if (response.ok) {
-        setLookingForContent(json);
+        if (response.ok) {
+          setLookingForContent(json);
+        }
+      } catch {
+        setLookingForContent(lfcLocal);
       }
     };
 

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 // Components and Styles
 import "./MobileNav.css";
+import { socialMedia as smLocal, mainNav as mnLocal } from "../data/Navigation";
 
 const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
   const [socialMedia, setSocialMedia] = useState([]);
@@ -10,14 +11,19 @@ const MobileNav = ({ sidebarVisibility, handleMainMenuClick }) => {
 
   useEffect(() => {
     const fetchNavigationContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/navigation"
-      );
-      const json = await response.json();
+      try {
+        const response = await fetch(
+          "https://ajtibayan.com/shortstaysintl/api/navigation"
+        );
+        const json = await response.json();
 
-      if (response.ok) {
-        setSocialMedia(json[0].socialMedia);
-        setMainNav(json[1].mainNav);
+        if (response.ok) {
+          setSocialMedia(json[0].socialMedia);
+          setMainNav(json[1].mainNav);
+        }
+      } catch {
+        setSocialMedia(smLocal);
+        setMainNav(mnLocal);
       }
     };
 

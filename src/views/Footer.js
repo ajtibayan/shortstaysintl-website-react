@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 // Components and Styles
 import "./Footer.css";
+import { socialMedia as smLocal, mainNav as mnLocal } from "../data/Navigation";
 
 const Footer = () => {
   const curDate = new Date(),
@@ -23,14 +24,19 @@ const Footer = () => {
 
   useEffect(() => {
     const fetchNavigationContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/navigation"
-      );
-      const json = await response.json();
+      try {
+        const response = await fetch(
+          "https://ajtibayan.com/shortstaysintl/api/navigation"
+        );
+        const json = await response.json();
 
-      if (response.ok) {
-        setSocialMedia(json[0].socialMedia);
-        setMainNav(json[1].mainNav);
+        if (response.ok) {
+          setSocialMedia(json[0].socialMedia);
+          setMainNav(json[1].mainNav);
+        }
+      } catch {
+        setSocialMedia(smLocal);
+        setMainNav(mnLocal);
       }
     };
 

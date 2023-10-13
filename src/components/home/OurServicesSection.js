@@ -5,20 +5,24 @@ import Service from "./Service";
 import "./OurServicesSection.css";
 
 // Assets
-// import { ourServices } from "../../data/OurServicesSection";
+import { ourServices } from "../../data/OurServicesSection";
 
 const OurServicesSection = () => {
   const [ourServicesContent, setOurServicesContent] = useState([]);
 
   useEffect(() => {
     const fetchOurServicesContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/homepage/ourServicesSection"
-      );
-      const json = await response.json();
+      try {
+        const response = await fetch(
+          "https://ajtibayan.com/shortstaysintl/api/homepage/ourServicesSection"
+        );
+        const json = await response.json();
 
-      if (response.ok) {
-        setOurServicesContent(json);
+        if (response.ok) {
+          setOurServicesContent(json);
+        }
+      } catch {
+        setOurServicesContent(ourServices);
       }
     };
 
