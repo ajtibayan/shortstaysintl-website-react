@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 
 // Components and Styles
-import "./LookingFor.css";
+import './LookingFor.css';
+
+// Assets;
+import { lookingForContent as lfcData } from '../../data/LookingForSection';
 
 const LookingFor = () => {
-  const [lookingForContent, setLookingForContent] = useState([]);
-
-  useEffect(() => {
-    const fetchLookingForContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/homepage/lookingForSection",
-      );
-      const json = await response.json();
-
-      if (response.ok) {
-        setLookingForContent(json);
-      }
-    };
-
-    fetchLookingForContent();
-  }, []);
+  const [lookingForContent, setLookingForContent] = useState(lfcData);
 
   return (
     <section className="section-wrapper section-lookingFor">

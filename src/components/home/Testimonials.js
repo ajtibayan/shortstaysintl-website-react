@@ -1,26 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 
 // Components and Styles
-import "./Testimonials.css";
-import TestimonialQuoteBox from "./TestimonialQuoteBox";
+import './Testimonials.css';
+import TestimonialQuoteBox from './TestimonialQuoteBox';
+import { testimonialsData } from '../../data/TestimonialsHomePage';
 
 const Testimonials = () => {
-  const [testimonialsContent, setTestimonialsContent] = useState([]);
+  const [testimonialsContent, setTestimonialsContent] =
+    useState(testimonialsData);
 
-  useEffect(() => {
-    const fetchTestimonialsContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/homepage/testimonialsSection",
-      );
-      const json = await response.json();
-
-      if (response.ok) {
-        setTestimonialsContent(json);
-      }
-    };
-
-    fetchTestimonialsContent();
-  }, []);
   return (
     <section className="section-wrapper section-testimonials">
       <div className="heading-container">

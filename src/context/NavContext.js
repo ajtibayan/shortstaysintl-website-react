@@ -1,26 +1,13 @@
-import { createContext, useEffect, useState, useContext } from "react";
+import { createContext, useState, useContext } from 'react';
+
+// Data
+import { socialMedia as smData, mainNav as mnData } from '../data/Navigation';
 
 const NavContext = createContext();
 
 function NavProvider({ children }) {
-  const [socialMedia, setSocialMedia] = useState([]);
-  const [mainNav, setMainNav] = useState([]);
-
-  useEffect(() => {
-    const fetchNavigationContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/navigation"
-      );
-      const json = await response.json();
-
-      if (response.ok) {
-        setSocialMedia(json[0].socialMedia);
-        setMainNav(json[1].mainNav);
-      }
-    };
-
-    fetchNavigationContent();
-  }, []);
+  const [socialMedia, setSocialMedia] = useState(smData);
+  const [mainNav, setMainNav] = useState(mnData);
 
   return (
     <NavContext.Provider

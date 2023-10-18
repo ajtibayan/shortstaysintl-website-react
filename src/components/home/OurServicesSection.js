@@ -1,29 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 
 // Components and Styles
-import Service from "./Service";
-import "./OurServicesSection.css";
+import Service from './Service';
+import './OurServicesSection.css';
 
-// Assets
-// import { ourServices } from "../../data/OurServicesSection";
+// Assets;
+import { ourServices } from '../../data/OurServicesSection';
 
 const OurServicesSection = () => {
-  const [ourServicesContent, setOurServicesContent] = useState([]);
+  const [ourServicesContent, setOurServicesContent] = useState(ourServices);
 
-  useEffect(() => {
-    const fetchOurServicesContent = async () => {
-      const response = await fetch(
-        "https://ajtibayan.com/shortstaysintl/api/homepage/ourServicesSection",
-      );
-      const json = await response.json();
-
-      if (response.ok) {
-        setOurServicesContent(json);
-      }
-    };
-
-    fetchOurServicesContent();
-  }, []);
   return (
     <section className="section-wrapper section-ourServices">
       <div className="heading-container">
