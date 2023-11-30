@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ServicesData } from '../../models/HomeData';
 
 const Service = ({
   id,
@@ -9,7 +10,7 @@ const Service = ({
   serviceText,
   linkLoc,
   altAtt,
-}) => {
+}: ServicesData) => {
   return (
     <div className={`${itemClass} grid-item`} key={id}>
       <div className="mb-2 w-full text-center">

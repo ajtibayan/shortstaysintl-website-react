@@ -7,6 +7,7 @@ export const ourServices = [
     serviceText:
       'New to the short-term rental business and looking for guidance from experienced managers and hosts?',
     linkLoc: '/OurServices',
+    altAtt: '',
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const ourServices = [
     serviceText:
       'Create an Airbnb profile + complete listing set up & ranking optimization.',
     linkLoc: '/',
+    altAtt: '',
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const ourServices = [
     serviceText:
       'Manage the day to day communications for inquiries and confirmed guests.',
     linkLoc: '/',
+    altAtt: '',
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const ourServices = [
     serviceText:
       'Besides accommodations, we have travel pros that can help you book your perfect tour/trip around the world.',
     linkLoc: '/',
+    altAtt: '',
   },
   {
     id: 5,
@@ -43,5 +47,6 @@ export const ourServices = [
     serviceText:
       'Looking to invest into a vacation home for short term rental but need help with financing?',
     linkLoc: '/',
+    altAtt: '',
   },
 ];

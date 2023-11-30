@@ -5,13 +5,7 @@ import './LookingFor.css';
 
 // Assets;
 import { lookingForContent as lfcData } from '../../data/LookingForSection';
-
-type LookingForData = {
-  faIcon: string;
-  heading: string;
-  text: string;
-  id: number;
-};
+import { LookingForData } from '../../models/HomeData';
 
 const LookingFor = () => {
   const [lookingForContent, setLookingForContent] = useState(lfcData);

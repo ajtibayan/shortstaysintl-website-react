@@ -1,16 +1,19 @@
 import React from 'react';
 
+// Assets
+import { TestimonialQuote } from '../../models/HomeData';
+
 const TestimonialQuoteBox = ({
-  _id,
+  id,
   testimonialNum,
   blockquoteClass,
   mediaImg,
   quoteText,
   quoterName,
   imgAlt,
-}) => {
+}: TestimonialQuote) => {
   return (
-    <div className={testimonialNum} key={_id}>
+    <div className={testimonialNum} key={id}>
       <blockquote className={blockquoteClass}>
         <div className="blockquote-content">
           {mediaImg !== '' && (
